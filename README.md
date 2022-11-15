@@ -8,6 +8,10 @@ Repository url: https://github.com/salviega/cyclimate-backend-node
 
 Heroku url: https://cyclimate-backend-node.herokuapp.com/
 
+### Cyclimate backend python:
+
+Repository url: https://github.com/Oriojas/skywood_urban
+
 ### Fleek deploy
 
 Fleek url: https://calm-surf-6459.on.fleek.co/
