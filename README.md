@@ -4,6 +4,7 @@ Cyclimate: ChainLink Hackathon Fall 2022
 
 ### Cyclimate backend node:
 
+Repository url: https://github.com/salviega/cyclimate-backend-node
 Heroku url: https://cyclimate-backend-node.herokuapp.com/
 
 ### Fleek deploy
