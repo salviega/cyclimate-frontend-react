@@ -10,7 +10,7 @@ Heroku url: https://cyclimate-backend-node.herokuapp.com/
 
 ### Fleek deploy
 
-Fleek url: xxx
+Fleek url: https://calm-surf-6459.on.fleek.co/
 
 ## Quick start 🏄
 
