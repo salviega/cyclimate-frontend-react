@@ -17,10 +17,10 @@ export function CyclimateSupplyNFTs({
   const putInSale = async (event) => {
     event.preventDefault();
     let roundPrice = Math.round(Number(price.current.value));
-    roundPrice = ethers.utils.parseEther(roundPrice.toString(), "ether");
     let parsedTaxFee = parseInt(taxFee.current.value);
     parsedTaxFee = (parsedTaxFee * roundPrice) / 100;
     parsedTaxFee = ethers.utils.parseEther(parsedTaxFee.toString(), "ether");
+    roundPrice = ethers.utils.parseEther(roundPrice.toString(), "ether");
     const parsedTokenId = parseInt(tokenId.current.value);
 
     try {
@@ -37,29 +37,32 @@ export function CyclimateSupplyNFTs({
         .then(async (_response) => {
           const response2 = await contracts.marketPlaceContract.approve(
             contracts.marketPlaceContract.address,
-            parsedTokenId
+            parsedTokenId,
+            { gasLimit: 250000 }
           );
           contracts.web3Provider
             .waitForTransaction(response2.hash)
             .then(async (_response2) => {
-              const response3 = await contracts.marketPlaceContract.sellItem(
-                contracts.marketPlaceContract.address,
-                parsedTokenId,
-                roundPrice
-              );
-              contracts.web3Provider
-                .waitForTransaction(response3.hash)
-                .then((_response3) => {
-                  setTimeout(() => {
-                    alert("Ya está en venta el NFT");
+              setTimeout(async () => {
+                const response3 = await contracts.marketPlaceContract.sellItem(
+                  contracts.marketPlaceContract.address,
+                  parsedTokenId,
+                  roundPrice
+                );
+                contracts.web3Provider
+                  .waitForTransaction(response3.hash)
+                  .then((_response3) => {
+                    setTimeout(() => {
+                      alert("It has just put the NFT up for sale");
+                      onSincronizedItems();
+                    }, 3000);
+                  })
+                  .catch((error) => {
+                    alert("Hubo un error, revisa la consola");
                     onSincronizedItems();
-                  }, 3000);
-                })
-                .catch((error) => {
-                  alert("Hubo un error, revisa la consola");
-                  onSincronizedItems();
-                  console.error(error);
-                });
+                    console.error(error);
+                  });
+              }, 5000);
             })
             .catch((error) => {
               alert("Hubo un error, revisa la consola");

@@ -60,9 +60,9 @@ export function CyclimateDashboardNFT({
           </p>
         </div>
       </div>
-      <button className="nft-description__show" onClick={onTransferFrom}>
+      {/* <button className="nft-description__show" onClick={onTransferFrom}>
         Transferir
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -21,7 +21,6 @@ export function CyclimateWallet() {
 
       const web3Signer = web3Provider.getSigner();
       const chainId = await web3Signer.getChainId();
-      console.log(chainId);
       if (chainId !== 80001) {
         auth.logout();
         alert("Change your network to Mumbai testnet!");

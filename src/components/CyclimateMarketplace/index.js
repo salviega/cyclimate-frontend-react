@@ -94,7 +94,7 @@ export function CyclimateMarketplace() {
       <p className="marketplace__description">
         We curate a collection of exclusive digital art pieces for our allies.
       </p>
-      {!loading && auth.user.isAdmin && (
+      {!loading /*&& auth.user.isAdmin */ && (
         <div className="marketplace-admin">
           <CyclimateSupplyNFTs
             contracts={contracts}

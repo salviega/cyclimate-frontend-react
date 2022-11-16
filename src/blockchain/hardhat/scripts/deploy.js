@@ -36,6 +36,7 @@ async function main() {
   );
 
   await cycliContract.authorizeOperator(marketplaceContract.address);
+  await marketplaceContract.addContractToken(cycliContract.address);
 
   const BenefitsContract = await ethers.getContractFactory("BenefitsContract");
   const benefitsContract = await BenefitsContract.deploy();

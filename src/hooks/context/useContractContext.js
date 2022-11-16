@@ -13,7 +13,7 @@ const benefitsContractAddress = addresses[3].benefitscontract;
 
 export function useContractContext(signer) {
   const provider = new ethers.providers.JsonRpcProvider(
-    "https://rpc.ankr.com/avalanche_fuji"
+    "https://rpc.ankr.com/polygon_mumbai"
   );
 
   const web3Provider = new ethers.providers.Web3Provider(window.ethereum);

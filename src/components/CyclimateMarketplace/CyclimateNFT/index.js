@@ -23,8 +23,7 @@ export function CyclimateNFT({
         .then(async (_response) => {
           const response2 = await contracts.marketPlaceContract.buyItem(
             contracts.cycliContract.address,
-            item.itemId,
-            { gasLimit: 250000 }
+            item.itemId
           );
           contracts.web3Provider
             .waitForTransaction(response2.hash)

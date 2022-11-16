@@ -9,14 +9,14 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "./RecipientContract.sol";
 
 /**
- *  @title MarketPlaceContract
+ *  @title MarketplaceContract
  *
  *  NOTE:
  *
  */
 
-interface ICosmosContract {
-    function substractCosmo(address _address, uint256 _amount)
+interface ICycliContract {
+    function substractCycli(address _address, uint256 _amount)
         external
         returns (bool);
 
@@ -121,10 +121,10 @@ contract MarketplaceContract is
     );
 
     /** @dev Constructor
-     * @param _erc777Address cosmo address (ERC777).
+     * @param _erc777Address cycli address (ERC777).
      */
     constructor(address _erc777Address)
-        ERC721("Cosmos", "CSMS")
+        ERC721("Cyclimate", "CCLM")
         RecipientContract(_erc777Address)
     {}
 
@@ -179,7 +179,7 @@ contract MarketplaceContract is
     /** @dev Generate NFT purchase.
      * @param _itemId Item ID.
      */
-    function buyItem(address _cosmoAddress, uint256 _itemId)
+    function buyItem(address _cycliAddress, uint256 _itemId)
         external
         payable
         nonReentrant
@@ -188,11 +188,11 @@ contract MarketplaceContract is
         Item storage item = items[_itemId];
 
         require(
-            tokenApproved[_cosmoAddress] == true,
+            tokenApproved[_cycliAddress] == true,
             "We don't accept this token"
         );
         require(
-            ICosmosContract(_cosmoAddress).getSupplyBalance(msg.sender) > price,
+            ICycliContract(_cycliAddress).getSupplyBalance(msg.sender) > price,
             "Insufficient tokens"
         );
         require(
@@ -201,7 +201,7 @@ contract MarketplaceContract is
         );
         require(!item.sold, "Item already sold");
 
-        if (!ICosmosContract(_cosmoAddress).substractCosmo(msg.sender, price)) {
+        if (!ICycliContract(_cycliAddress).substractCycli(msg.sender, price)) {
             revert("Your funds are insufficient");
         }
 
@@ -234,7 +234,6 @@ contract MarketplaceContract is
                 )
             )
         );
-
         emit Bought(
             item.itemId,
             address(item.nft),
@@ -257,7 +256,7 @@ contract MarketplaceContract is
         address _artist,
         uint256 _taxFee,
         address _addressTaxFeeToken
-    ) public onlyOwner returns (uint256) {
+    ) public returns (uint256) {
         artistList[_artist] = _artist;
 
         uint256 tokenId = tokenIdCounter.current();
@@ -365,12 +364,12 @@ contract MarketplaceContract is
             return;
         }
         require(
-            ICosmosContract(_addressTaxFeeToken).getSupplyBalance(_from) >
+            ICycliContract(_addressTaxFeeToken).getSupplyBalance(_from) >
                 _taxFee,
             "Insufficient tokens"
         );
         if (
-            !ICosmosContract(_addressTaxFeeToken).substractCosmo(_from, _taxFee)
+            !ICycliContract(_addressTaxFeeToken).substractCycli(_from, _taxFee)
         ) {
             revert("Your funds are insufficients");
         }

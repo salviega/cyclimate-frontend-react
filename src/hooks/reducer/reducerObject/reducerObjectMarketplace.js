@@ -1,6 +1,6 @@
-import { actionMarketplace } from '../actionTypes'
+import { actionMarketplace } from "../actionTypes";
 
-export function reducerObjectMarketplace () {
+export function reducerObjectMarketplace() {
   const initialValue = {
     itemsSale: [],
     purchasedItems: [],
@@ -8,30 +8,30 @@ export function reducerObjectMarketplace () {
     tokenIdCounter: 0,
     error: false,
     loading: true,
-    sincronizedItems: true
-  }
+    sincronizedItems: true,
+  };
 
   const reducerObject = (state, action) => {
     switch (action.type) {
-      case 'ERROR':
+      case "ERROR":
         return {
           ...state,
           error: action.payload,
-          loading: false
-        }
-      case 'LOADING':
+          loading: false,
+        };
+      case "LOADING":
         return {
           ...state,
-          loading: true
-        }
-      case 'SINCRONIZE':
+          loading: true,
+        };
+      case "SINCRONIZE":
         return {
           ...state,
           error: false,
           loading: true,
-          sincronizedItems: false
-        }
-      case 'SUCCESS':
+          sincronizedItems: false,
+        };
+      case "SUCCESS":
         return {
           itemsSale: action.payload.refactoredSaleItems,
           purchasedItems: action.payload.refactoredPurchasedItems,
@@ -39,14 +39,14 @@ export function reducerObjectMarketplace () {
           tokenIdCounter: action.payload.tokenIdCounter,
           error: false,
           loading: false,
-          sincronizedItems: true
-        }
+          sincronizedItems: true,
+        };
       default:
         return {
-          ...state
-        }
+          ...state,
+        };
     }
-  }
+  };
 
-  return { initialValue, reducerObject, actionMarketplace }
+  return { initialValue, reducerObject, actionMarketplace };
 }

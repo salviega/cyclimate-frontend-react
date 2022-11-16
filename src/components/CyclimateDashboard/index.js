@@ -48,7 +48,6 @@ export function CyclimateDashboard() {
         "https://cyclimate-backend-node.herokuapp.com/redeem"
       );
       const data = response.data;
-      console.log(data);
       setRedeemToken(data);
       setSincronized(false);
     } catch (error) {
@@ -100,6 +99,7 @@ export function CyclimateDashboard() {
         }
       );
 
+      console.log(":D", response.data);
       return await response.data;
     } catch (error) {
       console.error(error);

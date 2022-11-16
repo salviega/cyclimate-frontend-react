@@ -7,13 +7,10 @@ export function pushProtocolRestApi() {
       env: "staging",
     });
     let refactoredResponse = response.map((notification) => {
-      if (
-        notification.notification.title.includes("Skywood") ||
-        notification.notification.title.includes("Tranfer Alert")
-      ) {
-        return null;
+      if (notification.notification.title.includes("Cyclimate")) {
+        return notification;
       }
-      return notification;
+      return null;
     });
     let newRefactoredResponse = [];
     Object.keys(refactoredResponse).map((attribute) => {

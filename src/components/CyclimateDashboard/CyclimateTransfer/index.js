@@ -34,7 +34,7 @@ export function CyclimateTransfer({
 
     try {
       setLoading(true);
-      const response = await contracts.cosmoContract.authorizeOperator(
+      const response = await contracts.cycliContract.authorizeOperator(
         contracts.marketPlaceContract.address
       );
 
