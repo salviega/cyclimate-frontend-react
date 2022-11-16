@@ -1,4 +1,4 @@
-//@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600&display=swap");
 
 :root {
@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  background: var(--navy);
 }
 
 html {

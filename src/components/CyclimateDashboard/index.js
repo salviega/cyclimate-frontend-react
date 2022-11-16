@@ -26,7 +26,7 @@ export function CyclimateDashboard() {
   const [NFTs, setNFTs] = useState([]);
   const [item, setItem] = useState({});
   const [counter, setCounter] = useState(0);
-  const [reedemedToken, setRedeemToken] = useState({});
+  const [redeemedToken, setRedeemToken] = useState({});
   const [openModal, setOpenModal] = useState(false);
   const [openModalTransfer, setOpenModalTransfer] = useState(false);
   const initialState = {
@@ -48,6 +48,7 @@ export function CyclimateDashboard() {
         "https://cyclimate-backend-node.herokuapp.com/redeem"
       );
       const data = response.data;
+      console.log(data);
       setRedeemToken(data);
       setSincronized(false);
     } catch (error) {
