@@ -1,0 +1,21 @@
+Step by Step: Deploy a subgraph.
+
+npx hardhat compile
+
+npx hardhat node
+npx hardhat run --network localhost src/blockchain/hardhat/scripts/deploy.js 
+
+npx hardhat run --network matic src/blockchain/hardhat/scripts/deploy.js 
+npx hardhat verify --network matic <AddressContract> "Constructor argument 1"
+-- go to the graph studio and create a subgraph project
+
+npm install -g @graphprotocol/graph-cli
+graph init --product hosted-service <salviega/project-name>
+
+cd src/blockchain/subgraph/
+
+graph codegen && graph build
+graph auth --product hosted-service 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
+graph deploy --product hosted-service <salviega/project-name>
+
+

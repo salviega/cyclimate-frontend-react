@@ -1,0 +1,27 @@
+.button-wallet {
+  margin-right: 1em;
+  padding: 0vh 0.3vw;
+  height: 8vh;
+  width: 11.4rem;
+  cursor: pointer;
+  background: var(--blue);
+  border: none;
+  border-radius: 0.25em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--h4);
+  line-height: 3rem;
+  color: var(--white);
+}
+
+// Algunos estilos provocan que imagen de cerrado y de regreso dentro del
+// modal del login se vean mas grandes, por lo que se
+// agregan estas lineas.
+.w3a-header__button, .w3ajs-close-btn {
+  width: 2em;
+  height: 2em;
+}
+.w3a-external-back, .w3ajs-external-back{
+  width: 2em;
+  height: 2em;
+}

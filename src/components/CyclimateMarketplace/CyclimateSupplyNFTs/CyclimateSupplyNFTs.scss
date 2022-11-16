@@ -1,0 +1,80 @@
+.supply {
+  margin-left: 8rem;
+  width: 100vw;
+  
+
+  &__title {
+    margin-bottom: 5vh;
+    height: var(--h2);
+    width: 100vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--h2);
+    letter-spacing: 0.025rem;
+    color: var(--blue);
+  }
+
+  &-form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+      width: 40vw;
+      height: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+      justify-content: left;
+    }
+
+    &__add {
+      text-align: left;
+      margin-bottom: 1.2em;
+      width: 40vw;
+      height: 5vh;
+      background-color: var(--navy);
+      border: 0.1rem solid var(--white);
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+    }
+
+    &-create {
+      width: 40vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 0.3rem;
+
+      &__submit {
+        padding: 0vh 0.9vw;
+        max-width: max-content;
+        height: 8vh;
+        cursor: pointer;
+        background: var(--blue);
+        border-radius: 0.5em;
+        font-style: normal;
+        font-weight: 600;
+        font-size: var(--h4);
+        line-height: 3rem;
+        color: var(--white);
+      }
+      &__idCounter {
+        font-size: 10px;
+        max-width: max-content;
+      }
+    }
+  }
+}

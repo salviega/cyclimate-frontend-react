@@ -1,0 +1,124 @@
+.nft {
+  margin-bottom: 5.2rem;
+  width: 28vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.75em;
+  background: var(--white);
+
+  figure {
+    margin-top: 2rem;
+    width: 24vw;
+    height: 24vw;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.25em;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-description {
+    margin: 2.5vh 15vw 0vh 15vw;
+    padding: 0.65rem;
+    width: 24vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: left;
+
+    &__title {
+      width: 28.409rem;
+      height: var(--h3);
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h3);
+      line-height: 1.5em;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+
+      figure {
+        margin: 0;
+        width: 1.9rem;
+        height: 1.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__price {
+        max-width: max-content;
+        height: var(--h3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: var(--h3);
+        line-height: 1.5em;
+        color: var(--navy);
+        text-align: center;
+      }
+    }
+
+    &__show {
+      height: 8vh;
+      width: 14em;
+      background: var(--blue);
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--blue);
+      border-radius: 0.25em;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+//web
+@media screen and (min-width: 64em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+}

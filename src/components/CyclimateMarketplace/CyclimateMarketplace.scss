@@ -1,0 +1,40 @@
+.marketplace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    margin-top: 20vh;
+    margin-bottom: 5vh;
+    width: 100vw;
+    height: var(--h2);
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--h2);
+    letter-spacing: 0.025rem;
+    color: var(--blue);
+    text-align: center;
+  }
+
+  &__description {
+    margin-bottom: 9.725rem;
+    width: 50vw;
+    height: 16vh;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--h3);
+    line-height: 1.5em;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+  }
+
+  &__loading {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    height: auto;
+    width: auto;
+  }
+}

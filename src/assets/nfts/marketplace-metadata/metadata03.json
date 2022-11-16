@@ -1,0 +1,16 @@
+{
+  "name": "Elephant",
+  "description": "Cartoon elephant standing next to a car while smoking",
+  "image": "https://gateway.pinata.cloud/ipfs/QmRHd9FxGqCo7JGE9bznZ3cbRYniznDEmt2fGNoSdMUWsP",
+  "tokenStandard": "ERC-721",
+  "attributes": [
+    {
+      "trait-type": "animal",
+      "value": "elefante"
+    },
+    {
+      "realismo": "estilo",
+      "value": "anime"
+    }
+  ]
+}

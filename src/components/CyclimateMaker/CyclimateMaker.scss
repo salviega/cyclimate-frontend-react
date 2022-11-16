@@ -1,0 +1,103 @@
+.maker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  &__title {
+    margin-top: 25vh;
+    margin-bottom: 5vh;
+    width: 35.9rem;
+    height: var(--h2);
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--h2);
+    line-height: 1.2em;
+    color: var(--blue);
+    text-align: center;
+  }
+
+  &-form {
+    margin-bottom: 2.4rem;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-image {
+      width: 20vw;
+      margin-bottom: 10vh;
+
+      figcaption {
+        background: var(--white);
+        font-family: "Libre Franklin", sans-serif;
+        font-size: var(--h4);
+        color: var(--navy);
+      }
+    }
+
+    &__description {
+      text-align: center;
+      margin-bottom: 15vh;
+      width: 50vw;
+      height: var(--h4);
+      font-style: normal;
+      font-weight: 300;
+      font-size: var(--h4);
+      line-height: 1.2em;
+      color: var(--white);
+    }
+
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+      width: 40vw;
+      height: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+      justify-content: left;
+    }
+    &__add {
+      text-align: left;
+      margin-bottom: 1.2em;
+      width: 40vw;
+      height: 5vh;
+      background-color: var(--navy);
+      border: 0.1rem solid var(--white);
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+    }
+    &__submit {
+      margin-top: 5vh;
+      width: 16vw;
+      height: 8vh;
+      cursor: pointer;
+      background: var(--blue);
+      border-radius: 0.5em;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+    }
+  }
+
+  &__loading {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    height: auto;
+    width: auto;
+  }
+}

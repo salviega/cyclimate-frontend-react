@@ -1,0 +1,11 @@
+{
+  "name": "Superlitio en la Hambugueseria",
+  "description": "Entrada VIP para disfrutar a los Superlitio en la Hambugueseria",
+  "image": "https://gateway.pinata.cloud/ipfs/QmTzuRzsZubhecYLh6ZS5LZ3Wj1pUdJWK1rLP9bSXYSi1x/beneficio03.jpeg",
+  "attributes": [
+    {
+      "trait-type": "Términos y condiciones",
+      "value": "Válido únicamente el 31 de diciembre de 2022"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+.qr {
+  width: 8rem;
+  max-height: max-content;
+  border: 0.2rem solid white;
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  margin-top: 5vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  position: absolute;
+  top: 15vh;
+  display: grid;
+  grid-template-columns: 30vw 1fr;
+  column-gap: 5vw;
+  margin-bottom: 2.4rem;
+
+  h1 {
+    margin-bottom: 0.6rem;
+  }
+
+  img {
+    width: 350px;
+    height: 350px;
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  h2 {
+    font-size: var(--h3);
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 0.5vh;
+    margin-bottom: 5vh;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    &-price {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 0.8rem;
+
+      figure {
+        height: 1.4rem;
+        width: 1.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h2 {
+        margin: 0;
+        max-width: max-content;
+        font-size: var(--h3);
+        font-weight: 600;
+        color: var(--white);
+      }
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    grid-column: 2;
+    grid-row: 2;
+    height: 6vh;
+    width: 20vw;
+
+    &__volver {
+      margin-right: 1.5vw;
+
+      background: none;
+      font-family: "Libre Franklin", sans-serif;
+      font-size: var(--h4);
+      font-weight: 600;
+      color: var(--blue);
+      border: 1px solid var(--blue);
+      border-radius: 0.25em;
+      cursor: pointer;
+    }
+    
+    &__redimir {
+      margin-left: 1.5vw;
+      margin-right: 1.5vw;
+      background: var(--blue);
+      font-family: "Libre Franklin", sans-serif;
+      font-size: var(--h4);
+      font-weight: 600;
+      color: var(--white);
+      border: 1px solid var(--blue);
+      border-radius: 0.25em;
+      cursor: pointer;
+    }
+  }
+  &__loading {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    height: auto;
+    width: auto;
+  }
+}

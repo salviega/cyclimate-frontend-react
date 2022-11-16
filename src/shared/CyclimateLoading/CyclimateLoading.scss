@@ -1,0 +1,27 @@
+.spinner {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  animation: spinner 1.65s linear infinite;
+  background-color: rgba(100,100,100,0.15);
+  border: 5px solid #eaf0f6;
+  border-radius: 50%;
+  border-top: 5px solid #69a6ce;
+  bottom: 0;
+  box-shadow: 0px 0px 35px 20px rgba(100,100,100,0.30);
+  height: 39px;
+  width: 39px;
+  
+  margin: 0;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

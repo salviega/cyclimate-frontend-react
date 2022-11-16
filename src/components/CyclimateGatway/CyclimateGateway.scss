@@ -1,0 +1,106 @@
+.faucet {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: var(--p);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    border-radius: none;
+    padding: 2vh 2vw;
+
+  }
+
+  &__title {
+    margin-top: 25vh;
+    margin-bottom: 5vh;
+    width: 100vw;
+    height: var(--h2);
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--h2);
+    letter-spacing: 0.025rem;
+    color: var(--blue);
+    text-align: center;
+  }
+
+  &__description {
+    margin-bottom: 3.2em;
+    width: 50vw;
+    height: var(--h3);
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--h3);
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  &-form {
+    margin-bottom: 2.4rem;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+      width: 40vw;
+      height: 3.2rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+      justify-content: left;
+    }
+    &__add {
+      text-align: left;
+      margin-bottom: 1.2em;
+      width: 40vw;
+      height: 5vh;
+      background-color: var(--navy);
+      border: 0.1rem solid var(--white);
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.3rem;
+    }
+    &__submit {
+      padding: 0vh 0.9vw;
+      max-width: max-content;
+      height: 8vh;
+      cursor: pointer;
+      background: var(--blue);
+      border-radius: 0.5em;
+      font-style: normal;
+      font-weight: 600;
+      font-size: var(--h4);
+      line-height: 3rem;
+      color: var(--white);
+    }
+  }
+  &__loading {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    height: auto;
+    width: auto;
+  }
+}

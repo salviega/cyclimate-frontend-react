@@ -1,0 +1,55 @@
+import React from "react";
+import "./CyclimateFooter.scss";
+import bbva from "../../assets/images/logo-bbva.png";
+
+export function CyclimateFooter() {
+  return (
+    <footer className="footer">
+      <div className="footer-gap" />
+      <div className="footer-container">
+        <div className="footer-container-info">
+          <div className="footer-container-info-network">
+            <figure>
+              <img src={bbva} alt="logo" />
+            </figure>
+            <p className="footer-container-info-network__description">
+              ® Cyclimate All rights reserved
+            </p>
+          </div>
+          <div className="footer-container-info-marketplace">
+            <p className="footer-container-info-marketplace__title">
+              Social network
+            </p>
+            <p className="footer-container-info-marketplace__subtitle">
+              Instagram
+            </p>
+            <p className="footer-container-info-marketplace__subtitle">
+              Facebook
+            </p>
+            <p className="footer-container-info-marketplace__subtitle">
+              Twitter
+            </p>
+            <p className="footer-container-info-marketplace__subtitle">
+              Blog Cyclimate
+            </p>
+          </div>
+          <div className="footer-container-info-create">
+            <p className="footer-container-info-create__title">
+              Interest links
+            </p>
+            <p className="footer-container-info-create__subtitle">
+              About Cyclimate
+            </p>
+
+            <p className="footer-container-info-create__subtitle">
+              Center of attention
+            </p>
+            <p className="footer-container-info-create__subtitle">
+              Privacy policy
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

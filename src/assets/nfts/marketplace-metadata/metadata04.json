@@ -1,0 +1,16 @@
+{
+  "name": "Casas",
+  "description": "casas y edificios",
+  "image": "https://gateway.pinata.cloud/ipfs/QmWdLxNWaaTtRTX8xsvY6tMWN6o1yi5uU3UNNyWWpoisiN",
+  "tokenStandard": "ERC-721",
+  "attributes": [
+    {
+      "trait-type": "construción",
+      "value": "vivienda"
+    },
+    {
+      "realismo": "estilo",
+      "value": "abstracto"
+    }
+  ]
+}

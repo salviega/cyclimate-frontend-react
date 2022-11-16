@@ -1,0 +1,194 @@
+.collection-modal {
+  &-container {
+    position: relative;
+    width: 739.5px;
+    height: 483px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 20px;
+
+    &__cancel {
+      padding-top: 6px;
+      padding-right: 14px;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    &-content {
+      margin: 0 20.5px;
+      margin-top: 23px;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-around;
+
+      figure {
+        margin: 0px;
+        padding: 0px;
+        width: 289.5px;
+        height: 284.25px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+        }
+      }
+
+      &-metadata {
+        width: 289.5px;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          margin: 0px;
+          margin-bottom: 8px;
+          padding: 0px;
+          height: 22px;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 20px;
+          line-height: 110%;
+          color: #000000;
+        }
+
+        &__price {
+          margin-bottom: 9.5px;
+          height: 14px;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 14px;
+          line-height: 110%;
+          color: #000000;
+        }
+
+        &-sale {
+          margin: 0px;
+          padding-left: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 8px;
+          max-width: max-content;
+
+          &__icon {
+            margin: 0px;
+            padding: 0px;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 36px;
+            color: #000000;
+          }
+
+          &__currency {
+            margin: 0px;
+            margin: 12px 0px;
+            padding: 0px;
+            padding-top: 3px;
+            height: 36px;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 36px;
+            text-align: right;
+            color: #b0b0b0;
+          }
+        }
+
+        &-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &__contract {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: var(--p);
+            color: var(--navy);
+
+            a {
+              max-width: max-content;
+              font-style: normal;
+              font-weight: 300;
+              font-size: var(--p);
+              line-height: 36px;
+              text-decoration: none;
+              color: var(--blue);
+              border-bottom: 1px solid #000000;
+            }
+          }
+
+          &__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: var(--p);
+            color: var(--navy);
+
+            img {
+              width: 1.5rem;
+              height: 1.4rem;
+            }
+
+            p {
+              max-width: max-content;
+              font-style: normal;
+              font-weight: 300;
+              font-size: var(--p);
+              line-height: 36px;
+              text-decoration: none;
+              color: var(--navy);
+            }
+          }
+        }
+      }
+    }
+
+    &__description {
+      margin: 0;
+      margin-bottom: 1rem;
+      width: 40rem;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      color: var(--navy);
+    }
+
+    &-buy {
+      width: max-content;
+      height: max-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        cursor: pointer;
+        font-size: 12px;
+        color: var(--navy);
+        background: #fff;
+        border: 2px solid var(--navy);
+        border-radius: 25px;
+        padding: 10px 25px;
+        max-width: max-content;
+        transition: all 0.27s ease;
+
+        &:hover {
+          border: 2px solid var(--blue);
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}

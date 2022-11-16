@@ -1,0 +1,16 @@
+{
+  "name": "Hiphop dance",
+  "description": "Retrato dinámico de un joven y una mujer bailando hiphop aislado sobre fondo negros",
+  "image": "https://gateway.pinata.cloud/ipfs/QmdNNqNB7bgy9uuLKmwGfbhZKD3ejtkVxiXMJ3bjD9Z4jp",
+  "tokenStandard": "ERC-721",
+  "attributes": [
+    {
+      "trait-type": "baile",
+      "value": "hiphop"
+    },
+    {
+      "realismo": "estilo",
+      "value": "retrato dinamico"
+    }
+  ]
+}

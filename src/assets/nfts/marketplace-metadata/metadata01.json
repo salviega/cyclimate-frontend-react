@@ -1,0 +1,16 @@
+{
+  "name": "El davis",
+  "description": "Busto con figuras geometricas",
+  "image": "https://gateway.pinata.cloud/ipfs/QmYpGZNq7f1QNR85WmeAE46VU3K2T9tWjv1sdaFeRR7JGB",
+  "tokenStandard": "ERC-721",
+  "attributes": [
+    {
+      "trait-type": "realismo",
+      "value": "3"
+    },
+    {
+      "realismo": "abstracto",
+      "value": "2"
+    }
+  ]
+}
