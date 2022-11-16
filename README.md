@@ -6,11 +6,15 @@ Cyclimate: ChainLink Hackathon Fall 2022
 
 Repository url: https://github.com/salviega/cyclimate-backend-node
 
-Heroku url: https://cyclimate-backend-node.herokuapp.com/
+Heroku url: https://cyclimate-backend-node.herokuapp.com
 
 ### Cyclimate backend python:
 
 Repository url: https://github.com/Oriojas/skywood_urban
+
+### Cyclimate backend AWS endponit:
+
+Endpoints url: http://ec2-34-207-93-96.compute-1.amazonaws.com:8088/docs#
 
 ### Cyclimate backend subgraph:
 
