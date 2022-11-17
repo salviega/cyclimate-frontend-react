@@ -1,6 +1,5 @@
 import "./CyclimateWallet.scss";
 import React from "react";
-import { ethers } from "ethers";
 import { useAuth } from "../../../hooks/context";
 
 export function CyclimateWallet() {
@@ -8,29 +7,11 @@ export function CyclimateWallet() {
   const auth = useAuth();
 
   const connectWallet = async () => {
-    if (!window.ethereum?.isMetaMask) {
-      alert("Metamask wasn't detected, please install metamask extension");
-      return;
-    }
-
     if (auth.user.walletAddress === "Connect wallet") {
-      setLoading(true);
-      const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
-      await web3Provider.send("eth_requestAccounts", []);
-      const accounts = await web3Provider.send("eth_requestAccounts", []);
-
-      const web3Signer = web3Provider.getSigner();
-      const chainId = await web3Signer.getChainId();
-      if (chainId !== 80001) {
-        auth.logout();
-        alert("Change your network to Mumbai testnet!");
-        setLoading(false);
-        return;
-      }
-      auth.login({ walletAddress: accounts[0] });
+      await auth.login();
       setLoading(false);
     } else {
-      auth.logout();
+      await auth.logout();
       setLoading(false);
     }
   };

@@ -2,27 +2,45 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { useAuthContext } from "./useAuthContext";
 import { useContractContext } from "./useContractContext";
-import { useDashboardInfoContext } from "./useDashboardInfoContext";
+import { useDashboardInformationContext } from "./useDashboardInfoContext";
 
 const CyclimateContext = React.createContext();
 
 export function CyclimateProvider({ children }) {
-  const { user, login, logout } = useAuthContext();
   const {
+    user,
+    login,
+    logout,
+    getWeb3Auth,
+    web3Auth,
     web3Provider,
     web3Signer,
+  } = useAuthContext();
+  const {
     feedContract,
-    cycliContract,
-    marketPlaceContract,
-    benefitsContract,
-    // paymentGatewayContract,
+    _cycliContract,
+    _marketPlaceContract,
+    _benefitsContract,
+    // _paymentGatewayContract,
   } = useContractContext();
+  const {
+    _getUserInfo,
+    _getChainId,
+    _getAccounts,
+    _getBalance,
+    _getPrivateKey,
+  } = useDashboardInformationContext();
 
-  const { _getChainId, _getAccounts, _getBalance } = useDashboardInfoContext();
+  const cycliContract = _cycliContract(web3Signer);
+  const marketPlaceContract = _marketPlaceContract(web3Signer);
+  const benefitsContract = _benefitsContract(web3Signer);
+  // // const paymentGatewayContract = _paymentGatewayContract(web3Signer);
 
+  const getUserInfo = _getUserInfo(web3Auth);
   const getChainId = _getChainId(web3Provider);
   const getAccounts = _getAccounts(web3Signer);
   const getBalance = _getBalance(web3Provider);
+  const getPrivateKey = _getPrivateKey(web3Provider);
 
   return (
     <CyclimateContext.Provider
@@ -30,6 +48,7 @@ export function CyclimateProvider({ children }) {
         user,
         login,
         logout,
+        getWeb3Auth,
         web3Provider,
         web3Signer,
         feedContract,
@@ -37,9 +56,11 @@ export function CyclimateProvider({ children }) {
         marketPlaceContract,
         benefitsContract,
         // paymentGatewayContract,
+        getUserInfo,
         getChainId,
         getAccounts,
         getBalance,
+        getPrivateKey,
       }}
     >
       {children}
@@ -58,8 +79,9 @@ export function AuthRoute(props) {
 }
 
 export function useAuth() {
-  const { user, login, logout } = React.useContext(CyclimateContext);
-  const auth = { user, login, logout };
+  const { user, login, logout, getWeb3Auth } =
+    React.useContext(CyclimateContext);
+  const auth = { user, login, logout, getWeb3Auth };
   return auth;
 }
 
@@ -68,7 +90,7 @@ export function useContracts() {
     web3Provider,
     web3Signer,
     feedContract,
-    cycliContract,
+    cosmoContract,
     marketPlaceContract,
     benefitsContract,
     // paymentGatewayContract,
@@ -77,7 +99,7 @@ export function useContracts() {
     web3Provider,
     web3Signer,
     feedContract,
-    cycliContract,
+    cosmoContract,
     marketPlaceContract,
     benefitsContract,
     // paymentGatewayContract,
@@ -86,12 +108,14 @@ export function useContracts() {
 }
 
 export function useDashboardInfo() {
-  const { getChainId, getAccounts, getBalance } =
+  const { getUserInfo, getChainId, getAccounts, getBalance, getPrivateKey } =
     React.useContext(CyclimateContext);
   const dashboardInfo = {
+    getUserInfo,
     getChainId,
     getAccounts,
     getBalance,
+    getPrivateKey,
   };
   return dashboardInfo;
 }

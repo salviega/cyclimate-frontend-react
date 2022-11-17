@@ -16,44 +16,50 @@ export function useContractContext(signer) {
     "https://rpc.ankr.com/polygon_mumbai"
   );
 
-  const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
-  const web3Signer = web3Provider.getSigner();
-
   const feedContract = generateContract(
     feedContractAddress,
     feedContractAbi.abi,
     provider
   );
-  const cycliContract = generateContract(
-    cycliContractAddress,
-    cycliContractAbi.abi,
-    web3Signer
-  );
-  const marketPlaceContract = generateContract(
-    marketPlaceContractAddress,
-    marketPlaceContractAbi.abi,
-    web3Signer
-  );
-  const benefitsContract = generateContract(
-    benefitsContractAddress,
-    benefitsContractAbi.abi,
-    web3Signer
-  );
 
-  // const paymentGatewayContract = generateContract(
-  //   paymenGatewayContractAddress,
-  //   paymentGatewayContractAbi.abi,
-  //   web3Signer
-  // );
+  const _cycliContract = (web3Signer) => {
+    return generateContract(
+      cycliContractAddress,
+      cycliContractAbi.abi,
+      web3Signer
+    );
+  };
+
+  const _marketPlaceContract = (web3Signer) => {
+    return generateContract(
+      marketPlaceContractAddress,
+      marketPlaceContractAbi.abi,
+      web3Signer
+    );
+  };
+
+  const _benefitsContract = (web3Signer) => {
+    return generateContract(
+      benefitsContractAddress,
+      benefitsContractAbi.abi,
+      web3Signer
+    );
+  };
+
+  // const _paymentGatewayContract = (web3Signer) => {
+  //   return generateContract(
+  //     paymenGatewayContractAddress,
+  //     paymentGatewayContractAbi.abi,
+  //     web3Signer
+  //   )
+  // }
 
   return {
-    web3Provider,
-    web3Signer,
     feedContract,
-    cycliContract,
-    marketPlaceContract,
-    benefitsContract,
-    // paymentGatewayContract,
+    _cycliContract,
+    _marketPlaceContract,
+    _benefitsContract,
+    //_paymentGatewayContract
   };
 }
 

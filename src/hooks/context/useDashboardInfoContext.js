@@ -1,6 +1,12 @@
 import { ethers } from "ethers";
 
-export function useDashboardInfoContext() {
+export function useDashboardInformationContext() {
+  const _getUserInfo = (web3Auth) => {
+    if (web3Auth) {
+      return web3Auth.getUserInfo();
+    }
+  };
+
   const _getChainId = async (web3Provider) => {
     if (web3Provider) {
       const detailsNetwork = await web3Provider.getNetwork();
@@ -24,9 +30,23 @@ export function useDashboardInfoContext() {
     }
   };
 
+  const _getPrivateKey = async (web3Provider) => {
+    if (web3Provider) {
+      try {
+        return await web3Provider.provider.request({
+          method: "eth_private_key",
+        });
+      } catch {
+        return null;
+      }
+    }
+  };
+
   return {
+    _getUserInfo,
     _getChainId,
     _getAccounts,
     _getBalance,
+    _getPrivateKey,
   };
 }

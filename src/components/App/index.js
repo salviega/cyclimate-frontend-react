@@ -38,28 +38,21 @@ function App() {
     }
   };
 
-  React.useEffect(() => {
-    fetchData();
-    const currentNetwork = async () => {
-      const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
-      const web3Signer = web3Provider.getSigner();
-      const chainId = await web3Signer.getChainId();
-      return chainId;
-    };
-    if (window.ethereum) {
-      window.ethereum.on("chainChanged", () => {
-        currentNetwork().then((response) => {
-          if (response !== 43113) {
-            auth.logout();
-          }
-        });
-      });
-      window.ethereum.on("accountsChanged", () => {
-        auth.logout();
-      });
+  const init = async () => {
+    if (!localStorage.getItem("wallet")) {
+      setLoading(false);
+      return;
     }
-  }, [sincronizedItems]);
+    navigate("/");
+    auth.login();
+  };
 
+  React.useEffect(() => {
+    init();
+    setTimeout(async () => {
+      fetchData();
+    }, 1800);
+  }, [sincronizedItems]);
   return (
     <>
       {loading ? (
