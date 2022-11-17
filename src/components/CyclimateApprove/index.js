@@ -79,7 +79,7 @@ export function CyclimateApprove({ getItem }) {
   return (
     <div className="approve">
       <button className="details-buttons__redimir" onClick={onRedeemBenefit}>
-        Quemar
+        Burn
       </button>
     </div>
   );
