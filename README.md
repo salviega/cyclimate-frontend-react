@@ -16,6 +16,10 @@ Repository url: https://github.com/Oriojas/skywood_urban
 
 Endpoints url: http://ec2-34-207-93-96.compute-1.amazonaws.com:8088/docs#
 
+### Cyclimate backend Chainlink node:
+
+Repository url: https://github.com/LuisFelipe09/chainlink-mumbai-node
+
 ### Cyclimate backend subgraph:
 
 Repository url: https://github.com/salviega/cyclimate-backend-subgraph
