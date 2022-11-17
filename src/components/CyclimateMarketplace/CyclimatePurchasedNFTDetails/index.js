@@ -33,8 +33,8 @@ export function CyclimatePurchasedNFTDetails({ item, setOpenModalSummary }) {
           </div>
           <div className="collection-modal-container-content-metadata-container">
             <p className="collection-modal-container-content-metadata-container__contract">
-              Dirección del artista{" "}
-              <a href={`https://testnet.snowtrace.io/address/${item.artist}`}>
+              Artist wallet{" "}
+              <a href={`https://polygonscan.com/address/${item.artist}`}>
                 {" "}
                 {item.artist.slice(0, 6) + "..." + item.artist.slice(36)}
               </a>
@@ -43,10 +43,10 @@ export function CyclimatePurchasedNFTDetails({ item, setOpenModalSummary }) {
               Token ID <p>{item.tokenId}</p>
             </p>
             <p className="collection-modal-container-content-metadata-container__item">
-              Token Standard <p>{item.tokenStandard}</p>
+              Standard token <p>{item.tokenStandard}</p>
             </p>
             <div className="collection-modal-container-content-metadata-container__item">
-              Derechos de autor
+              Authors rights
               <p
                 className="collection-modal-container-content-metadata-container__item"
                 style={{ "column-gap": "8px" }}

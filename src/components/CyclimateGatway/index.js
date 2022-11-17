@@ -49,7 +49,7 @@ export function CyclimateGateway() {
             .waitForTransaction(response2.hash)
             .then(async (_response2) => {
               setTimeout(() => {
-                alert("Fueron cambiados tus Cyclimate a dólares");
+                alert("Was changed your Cycli to dollars");
                 setLoading(false);
               }, 3000);
             })

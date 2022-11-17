@@ -1,5 +1,7 @@
 import "./CyclimateNFTsResume.scss";
 import logo from "./../../../assets/images/logo-Cyclimate.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 export function CyclimateNFTsResume({
@@ -22,7 +24,7 @@ export function CyclimateNFTsResume({
 
   return (
     <div className="resumen">
-      <h1 className="resumen__title">Últimas transacciones</h1>
+      <h1 className="resumen__title">Lastest transactions</h1>
       <div className="resumen-list">
         <div className="resumen-list-head">
           <p className="resumen-list-head__title">IDs</p>
@@ -47,7 +49,11 @@ export function CyclimateNFTsResume({
                 onShowDetail(boughtItem);
               }}
             >
-              ver
+              look
+              <FontAwesomeIcon
+                icon={faEye}
+                className="resumen-list-body__icon"
+              />
             </p>
             <a
               className="resumen-list-body__address"
@@ -71,7 +77,7 @@ export function CyclimateNFTsResume({
           </div>
           <a
             className="resumen-list-footer__wallet"
-            href={`https://goerli.etherscan.io/address/${owner}`}
+            href={`https://polygonscan.com/address/${owner}`}
           >
             {" "}
             {owner.slice(0, 4) + "..." + owner.slice(38)}

@@ -49,8 +49,8 @@ export function CyclimateDashboardNFTDetails({
           </div>
           <div className="collection-modal-container-content-metadata-container">
             <p className="collection-modal-container-content-metadata-container__contract">
-              Dirección del artista{" "}
-              <a href={`https://testnet.snowtrace.io/address/${item.artist}`}>
+              Artist wallet{" "}
+              <a href={`https://polygonscan.com/address/${item.artist}`}>
                 {" "}
                 {item.artist.slice(0, 6) + "..." + item.artist.slice(36)}
               </a>
@@ -59,10 +59,10 @@ export function CyclimateDashboardNFTDetails({
               Token ID <p>{item.tokenId}</p>
             </p>
             <p className="collection-modal-container-content-metadata-container__item">
-              Token Standard <p>{item.tokenStandard}</p>
+              Standard Token <p>{item.tokenStandard}</p>
             </p>
             <div className="collection-modal-container-content-metadata-container__item">
-              Derechos de autor
+              Author rights
               <p
                 className="collection-modal-container-content-metadata-container__item"
                 style={{ "column-gap": "8px" }}
@@ -83,7 +83,7 @@ export function CyclimateDashboardNFTDetails({
             icon={faArrowRightArrowLeft}
             className="collection-modal-container-metadata-buy__icon"
           />
-          Transferir
+          Transfer
         </button>
       </div>
     </div>

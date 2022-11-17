@@ -34,7 +34,7 @@ export function CyclimateNFTDetails({
             .then((_response2) => {
               setTimeout(() => {
                 onSincronizedItems();
-                alert("Compra exitosa");
+                alert("Succesful purchase");
               }, 3000);
             })
             .catch((error) => {
@@ -82,8 +82,8 @@ export function CyclimateNFTDetails({
           </div>
           <div className="collection-modal-container-content-metadata-container">
             <p className="collection-modal-container-content-metadata-container__contract">
-              Dirección del artista{" "}
-              <a href={`https://testnet.snowtrace.io/address/${item.artist}`}>
+              Artist wallet{" "}
+              <a href={`https://polygonscan.com/address/${item.artist}`}>
                 {" "}
                 {item.artist.slice(0, 6) + "..." + item.artist.slice(36)}
               </a>
@@ -92,10 +92,10 @@ export function CyclimateNFTDetails({
               Token ID <p>{item.tokenId}</p>
             </p>
             <p className="collection-modal-container-content-metadata-container__item">
-              Token Standard <p>{item.tokenStandard}</p>
+              Standard token <p>{item.tokenStandard}</p>
             </p>
             <div className="collection-modal-container-content-metadata-container__item">
-              Derechos de autor
+              Author rights
               <p
                 className="collection-modal-container-content-metadata-container__item"
                 style={{ "column-gap": "8px" }}
@@ -116,7 +116,7 @@ export function CyclimateNFTDetails({
             icon={faWallet}
             className="collection-modal-container-metadata-buy__icon"
           />
-          Comprar
+          Buy
         </button>
       </div>
     </div>

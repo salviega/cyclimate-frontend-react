@@ -103,7 +103,7 @@ export function CyclimateMaker({ createItem, setSincronizedItems }) {
         setTimeout(async () => {
           delete info.image;
           await createItem(info);
-          alert("El beneficio fue creado");
+          alert("The benefit was created");
           setLoading(false);
           setSincronizedItems(false);
           navigate("/");
@@ -177,7 +177,7 @@ export function CyclimateMaker({ createItem, setSincronizedItems }) {
             <p className="maker-form__subtitle">Terms and Conditions</p>
             <input className="maker-form__add" ref={terms} />
           </span>
-          <button className="maker-form__submit">Enviar</button>
+          <button className="maker-form__submit">Send</button>
         </form>
       )}
     </div>

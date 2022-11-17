@@ -61,7 +61,7 @@ export function CyclimateTransfer({
                 .then(async (_response2) => {
                   setTimeout(() => {
                     setLoading(false);
-                    alert(`Fue transferido ${item.name}`);
+                    alert(`Was transfer ${item.name} to ${info.to}`);
                     setSincronized(false);
                   }, 3000);
                 })

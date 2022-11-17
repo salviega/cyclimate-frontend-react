@@ -30,7 +30,7 @@ export function CyclimateNFT({
             .then((_response2) => {
               setTimeout(() => {
                 onSincronizedItems();
-                alert("Compra exitosa");
+                alert("Succesful purchase");
               }, 3000);
             })
             .catch((error) => {

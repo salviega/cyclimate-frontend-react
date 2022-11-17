@@ -71,7 +71,7 @@ export function CyclimateApprove({ getItem }) {
     contracts.web3Provider
       .waitForTransaction(response.hash)
       .then(async (_response) => {
-        alert("Fue aceptado el beneficio");
+        alert("Was burned the benefit");
         navigate("/");
       });
   };

@@ -46,7 +46,7 @@ export function CyclimateFaucet() {
             .then(async (_response2) => {
               setTimeout(() => {
                 setLoading(false);
-                alert("Fueron añadidos 10 Cyclimate a su billetera");
+                alert("Was added 10 Cycli to your wallet");
               }, 3000);
             })
             .catch((error) => {

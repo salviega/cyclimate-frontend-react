@@ -194,14 +194,13 @@ export function CyclimateEventDetails({ getItem }) {
                         <QRCodeSVG
                           value={`dark-surf-5539.on.fleek.co/approve/${slug}==${button.id}`}
                         />
-                        <button
-                          className="details-buttons__volver"
-                          onClick={() =>
-                            navigate(`/approve/${slug}==${button.id}`)
-                          }
+                        <a
+                          href={`dark-surf-5539.on.fleek.co/approve/${slug}==${button.id}`}
                         >
-                          redeem
-                        </button>
+                          <button className="details-buttons__volver">
+                            redeem
+                          </button>
+                        </a>
                       </div>
                     )
                   )

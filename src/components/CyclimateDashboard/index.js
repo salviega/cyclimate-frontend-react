@@ -48,7 +48,7 @@ export function CyclimateDashboard() {
         "https://cyclimate-backend-node.herokuapp.com/redeem"
       );
       const data = response.data;
-      console.log(data);
+      console.log("Redeen data :", data);
       setRedeemToken(data);
       setSincronized(false);
     } catch (error) {
