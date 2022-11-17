@@ -5,16 +5,22 @@ import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 import "./VulnerableRecipientContract.sol";
 
-interface ICosmosContract {
-    function substractCosmo(address _address, uint256 _amount) external returns(bool);
-    function getSupplyBalance(address _address) external view returns(uint256);
+interface ICycliContract {
+    function substractCycli(address _address, uint256 _amount)
+        external
+        returns (bool);
+
+    function getSupplyBalance(address _address) external view returns (uint256);
 }
 
-contract PaymentGatewayContract is  VulnerableRecipientContract, ChainlinkClient, ConfirmedOwner {
-
+contract PaymentGatewayContract is
+    VulnerableRecipientContract,
+    ChainlinkClient,
+    ConfirmedOwner
+{
     using Chainlink for Chainlink.Request;
 
-    address cosmoContract;
+    address cycliContract;
     uint256 private constant ORACLE_PAYMENT = 1 * LINK_DIVISIBILITY; // 1 * 10**18
     string public lastRetrievedInfo;
 
@@ -28,9 +34,12 @@ contract PaymentGatewayContract is  VulnerableRecipientContract, ChainlinkClient
      *@dev LINK address in fuji network: 0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846
      * @dev Check https://docs.chain.link/docs/link-token-contracts/ for LINK address for the right network
      */
-    constructor(address _cosmoContract) ConfirmedOwner(msg.sender) VulnerableRecipientContract(_cosmoContract) {
+    constructor(address _cycliContract)
+        ConfirmedOwner(msg.sender)
+        VulnerableRecipientContract(_cycliContract)
+    {
         setChainlinkToken(0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846);
-        cosmoContract = _cosmoContract;
+        cycliContract = _cycliContract;
     }
 
     function requestPayOut(
@@ -40,8 +49,10 @@ contract PaymentGatewayContract is  VulnerableRecipientContract, ChainlinkClient
         uint256 value,
         string memory valor
     ) public {
-
-        require(ICosmosContract(cosmoContract).getSupplyBalance(msg.sender) > value, "Insufficient tokens");
+        require(
+            ICycliContract(cycliContract).getSupplyBalance(msg.sender) > value,
+            "Insufficient tokens"
+        );
 
         deposit(value);
 
