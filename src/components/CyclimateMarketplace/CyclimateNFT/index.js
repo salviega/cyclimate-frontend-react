@@ -1,22 +1,22 @@
-import "./CyclimateNFT.scss";
-import logo from "./../../../assets/images/logo-Cyclimate.png";
-import React from "react";
+import './CyclimateNFT.scss'
+import logo from './../../../assets/images/logo-Cyclimate.png'
+import React from 'react'
 
-export function CyclimateNFT({
+export function CyclimateNFT ({
   key,
   item,
   contracts,
   onLoading,
   onSincronizedItems,
   setItem,
-  setOpenModal,
+  setOpenModal
 }) {
   const onBuy = async () => {
     try {
-      onLoading();
+      onLoading()
       const response = await contracts.cycliContract.authorizeOperator(
         contracts.marketPlaceContract.address
-      );
+      )
 
       contracts.web3Provider
         .waitForTransaction(response.hash)
@@ -24,57 +24,57 @@ export function CyclimateNFT({
           const response2 = await contracts.marketPlaceContract.buyItem(
             contracts.cycliContract.address,
             item.itemId
-          );
+          )
           contracts.web3Provider
             .waitForTransaction(response2.hash)
             .then((_response2) => {
               setTimeout(() => {
-                onSincronizedItems();
-                alert("Succesful purchase");
-              }, 3000);
+                onSincronizedItems()
+                alert('Succesful purchase')
+              }, 3000)
             })
             .catch((error) => {
-              onSincronizedItems();
-              alert("Hubo un error, revisa la consola");
-              console.error(error);
-            });
+              onSincronizedItems()
+              alert('Hubo un error, revisa la consola')
+              console.error(error)
+            })
         })
         .catch((error) => {
-          onSincronizedItems();
-          alert("Hubo un error, revisa la consola");
-          console.error(error);
-        });
+          onSincronizedItems()
+          alert('Hubo un error, revisa la consola')
+          console.error(error)
+        })
     } catch (error) {
-      onSincronizedItems();
-      alert("Hubo un error, revisa la consola");
-      console.error(error);
+      onSincronizedItems()
+      alert('Hubo un error, revisa la consola')
+      console.error(error)
     }
-  };
+  }
 
   const onShowDetail = (item) => {
-    setItem(item);
-    setOpenModal(true);
-  };
+    setItem(item)
+    setOpenModal(true)
+  }
 
   return (
-    <div className="nft">
+    <div className='nft'>
       <figure onClick={() => onShowDetail(item)}>
-        <img src={item.image} alt="logo" />
+        <img src={item.image} alt='logo' />
       </figure>
-      <div className="nft-description">
-        <p className="nft-description__title">{item.name}</p>
-        <div className="nft-description-container">
+      <div className='nft-description'>
+        <p className='nft-description__title'>{item.name}</p>
+        <div className='nft-description-container'>
           <figure onClick={() => onShowDetail(item)}>
-            <img alt="logo" src={logo} />
+            <img alt='logo' src={logo} />
           </figure>
-          <p className="nft-description-container__price">
+          <p className='nft-description-container__price'>
             {parseInt(item.price) / 1000000000000000000}
           </p>
         </div>
       </div>
-      <button className="nft-description__show" onClick={onBuy}>
+      <button className='nft-description__show' onClick={onBuy}>
         Comprar
       </button>
     </div>
-  );
+  )
 }

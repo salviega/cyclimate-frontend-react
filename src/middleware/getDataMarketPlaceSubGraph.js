@@ -1,12 +1,12 @@
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 
-export function getDataMarketPlaceSubGraph() {
-  const url = "https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4";
+export function getDataMarketPlaceSubGraph () {
+  const url = 'https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4'
 
   const client = new ApolloClient({
     uri: url,
-    cache: new InMemoryCache(),
-  });
+    cache: new InMemoryCache()
+  })
 
   const queryItemsForSale = `
     query {
@@ -23,7 +23,7 @@ export function getDataMarketPlaceSubGraph() {
         seller
       }
     }
-  `;
+  `
   const queryPurchasedItems = `
     query {
       dataBoughts {
@@ -39,7 +39,7 @@ export function getDataMarketPlaceSubGraph() {
         buyer
       }
     }
-  `;
+  `
   const queryNFTByTokenId = `
   query dataBoughts($tokenId: BigInt!) {
     dataBoughts(where: {tokenId: $tokenId}) {
@@ -55,28 +55,28 @@ export function getDataMarketPlaceSubGraph() {
       buyer
     }
   }
-`;
+`
   const getItemsForSale = async () => {
-    const response = await client.query({ query: gql(queryItemsForSale) });
-    return response.data.dataOfferds;
-  };
+    const response = await client.query({ query: gql(queryItemsForSale) })
+    return response.data.dataOfferds
+  }
 
   const getPurchasedItems = async () => {
-    const response = await client.query({ query: gql(queryPurchasedItems) });
-    return response.data.dataBoughts;
-  };
+    const response = await client.query({ query: gql(queryPurchasedItems) })
+    return response.data.dataBoughts
+  }
 
   const getNFTByTokenId = async (tokenId) => {
     const response = await client.query({
       query: gql(queryNFTByTokenId),
-      variables: { tokenId },
-    });
-    return response.data.dataBoughts;
-  };
+      variables: { tokenId }
+    })
+    return response.data.dataBoughts
+  }
 
   return {
     getItemsForSale,
     getPurchasedItems,
-    getNFTByTokenId,
-  };
+    getNFTByTokenId
+  }
 }

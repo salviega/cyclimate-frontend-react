@@ -1,7 +1,7 @@
-import React from "react";
-import { NotificationItem } from "@pushprotocol/uiweb";
+import React from 'react'
+import { NotificationItem } from '@pushprotocol/uiweb'
 
-export function CyclimateNotifications({ notifications }) {
+export function CyclimateNotifications ({ notifications }) {
   return (
     <>
       {notifications?.map((oneNotification, index) => {
@@ -14,8 +14,8 @@ export function CyclimateNotifications({ notifications }) {
           image,
           url,
           blockchain,
-          notification,
-        } = oneNotification;
+          notification
+        } = oneNotification
 
         return (
           <NotificationItem
@@ -27,13 +27,13 @@ export function CyclimateNotifications({ notifications }) {
             icon={icon}
             image={image}
             url={url}
-            theme="dark"
+            theme='dark'
             chainName={blockchain}
             notification={notification}
           />
-        );
+        )
       })}
       ;
     </>
-  );
+  )
 }

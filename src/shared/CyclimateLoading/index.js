@@ -1,6 +1,6 @@
-import "./CyclimateLoading.scss";
-import React from "react";
+import './CyclimateLoading.scss'
+import React from 'react'
 
-export function CyclimateLoading() {
-  return <div className="spinner" />;
+export function CyclimateLoading () {
+  return <div className='spinner' />
 }

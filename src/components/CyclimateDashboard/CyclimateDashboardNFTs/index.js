@@ -1,18 +1,18 @@
-import "./CyclimateDashboardNFTs.scss";
-import React from "react";
+import './CyclimateDashboardNFTs.scss'
+import React from 'react'
 
-export function CyclimateDashboardNFTs({
+export function CyclimateDashboardNFTs ({
   children,
   contracts,
   setLoading,
   setSincronized,
   setItem,
   setOpenModal,
-  setOpenModalTransfer,
+  setOpenModalTransfer
 }) {
   return (
-    <div className="nfts">
-      <div className="nfts-container">
+    <div className='nfts'>
+      <div className='nfts-container'>
         {React.Children.toArray(children).map((child) =>
           React.cloneElement(child, {
             contracts,
@@ -20,10 +20,10 @@ export function CyclimateDashboardNFTs({
             setSincronized,
             setItem,
             setOpenModal,
-            setOpenModalTransfer,
+            setOpenModalTransfer
           })
         )}
       </div>
     </div>
-  );
+  )
 }

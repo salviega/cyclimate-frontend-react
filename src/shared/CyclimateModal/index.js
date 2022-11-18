@@ -1,10 +1,10 @@
-import "./CyclimateModal.scss";
-import React from "react";
-import ReactDOM from "react-dom";
+import './CyclimateModal.scss'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-export function CyclimateModal({ children }) {
+export function CyclimateModal ({ children }) {
   return ReactDOM.createPortal(
-    <div className="modal">{children}</div>,
-    document.getElementById("modal")
-  );
+    <div className='modal'>{children}</div>,
+    document.getElementById('modal')
+  )
 }

@@ -1,27 +1,27 @@
-import "./CyclimateSupplyNFTs.scss";
-import React, { useRef } from "react";
-import { ethers } from "ethers";
+import './CyclimateSupplyNFTs.scss'
+import React, { useRef } from 'react'
+import { ethers } from 'ethers'
 
-export function CyclimateSupplyNFTs({
+export function CyclimateSupplyNFTs ({
   contracts,
   tokenIdCounter,
   onLoading,
-  onSincronizedItems,
+  onSincronizedItems
 }) {
-  const price = useRef();
-  const tokenURI = useRef();
-  const tokenId = useRef();
-  const artistWallet = useRef();
-  const taxFee = useRef();
+  const price = useRef()
+  const tokenURI = useRef()
+  const tokenId = useRef()
+  const artistWallet = useRef()
+  const taxFee = useRef()
 
   const putInSale = async (event) => {
-    event.preventDefault();
-    let roundPrice = Math.round(Number(price.current.value));
-    let parsedTaxFee = parseInt(taxFee.current.value);
-    parsedTaxFee = (parsedTaxFee * roundPrice) / 100;
-    parsedTaxFee = ethers.utils.parseEther(parsedTaxFee.toString(), "ether");
-    roundPrice = ethers.utils.parseEther(roundPrice.toString(), "ether");
-    const parsedTokenId = parseInt(tokenId.current.value);
+    event.preventDefault()
+    let roundPrice = Math.round(Number(price.current.value))
+    let parsedTaxFee = parseInt(taxFee.current.value)
+    parsedTaxFee = (parsedTaxFee * roundPrice) / 100
+    parsedTaxFee = ethers.utils.parseEther(parsedTaxFee.toString(), 'ether')
+    roundPrice = ethers.utils.parseEther(roundPrice.toString(), 'ether')
+    const parsedTokenId = parseInt(tokenId.current.value)
 
     try {
       const response = await contracts.marketPlaceContract.mint(
@@ -29,9 +29,9 @@ export function CyclimateSupplyNFTs({
         artistWallet.current.value,
         parsedTaxFee,
         contracts.cycliContract.address
-      );
+      )
 
-      onLoading();
+      onLoading()
       contracts.web3Provider
         .waitForTransaction(response.hash)
         .then(async (_response) => {
@@ -39,7 +39,7 @@ export function CyclimateSupplyNFTs({
             contracts.marketPlaceContract.address,
             parsedTokenId,
             { gasLimit: 250000 }
-          );
+          )
           contracts.web3Provider
             .waitForTransaction(response2.hash)
             .then(async (_response2) => {
@@ -48,106 +48,106 @@ export function CyclimateSupplyNFTs({
                   contracts.marketPlaceContract.address,
                   parsedTokenId,
                   roundPrice
-                );
+                )
                 contracts.web3Provider
                   .waitForTransaction(response3.hash)
                   .then((_response3) => {
                     setTimeout(() => {
-                      alert("It has just put the NFT up for sale");
-                      onSincronizedItems();
-                    }, 3000);
+                      alert('It has just put the NFT up for sale')
+                      onSincronizedItems()
+                    }, 3000)
                   })
                   .catch((error) => {
-                    alert("Hubo un error, revisa la consola");
-                    onSincronizedItems();
-                    console.error(error);
-                  });
-              }, 5000);
+                    alert('Hubo un error, revisa la consola')
+                    onSincronizedItems()
+                    console.error(error)
+                  })
+              }, 5000)
             })
             .catch((error) => {
-              alert("Hubo un error, revisa la consola");
-              onSincronizedItems();
-              console.error(error);
-            });
+              alert('Hubo un error, revisa la consola')
+              onSincronizedItems()
+              console.error(error)
+            })
         })
         .catch((error) => {
-          alert("Hubo un error, revisa la consola");
-          onSincronizedItems();
-          console.error(error);
-        });
+          alert('Hubo un error, revisa la consola')
+          onSincronizedItems()
+          console.error(error)
+        })
     } catch (error) {
-      alert("Hubo un error, revisa la consola");
-      onSincronizedItems();
-      console.error(error);
+      alert('Hubo un error, revisa la consola')
+      onSincronizedItems()
+      console.error(error)
     }
-  };
+  }
 
   return (
-    <div className="supply">
-      <h1 className="supply__title">Sell NFT</h1>
-      <form className="supply-form" onSubmit={putInSale}>
+    <div className='supply'>
+      <h1 className='supply__title'>Sell NFT</h1>
+      <form className='supply-form' onSubmit={putInSale}>
         <span>
-          <p className="supply-form__subtitle">Add the price in Cyclimate: </p>
+          <p className='supply-form__subtitle'>Add the price in Cyclimate: </p>
           <input
-            className="supply-form__add"
-            type="number"
+            className='supply-form__add'
+            type='number'
             required
-            min="1"
-            step="0.01"
+            min='1'
+            step='0.01'
             ref={price}
           />
         </span>
         <span>
-          <p className="supply-form__subtitle">Add the token ID: </p>
+          <p className='supply-form__subtitle'>Add the token ID: </p>
           <input
-            className="supply-form__add"
-            type="number"
+            className='supply-form__add'
+            type='number'
             required
-            min="0"
-            step="0"
+            min='0'
+            step='0'
             ref={tokenId}
           />
         </span>
         <span>
-          <p className="supply-form__subtitle">
-            Add the metadata of the new NFT:{" "}
+          <p className='supply-form__subtitle'>
+            Add the metadata of the new NFT:{' '}
           </p>
           <input
-            className="supply-form__add"
-            type="url"
+            className='supply-form__add'
+            type='url'
             required
             ref={tokenURI}
           />
         </span>
         <span>
-          <p className="supply-form__subtitle">Wallet of the artist: </p>
+          <p className='supply-form__subtitle'>Wallet of the artist: </p>
           <input
-            className="supply-form__add"
-            type="text"
+            className='supply-form__add'
+            type='text'
             required
             ref={artistWallet}
           />
         </span>
         <span>
-          <p className="supply-form__subtitle">% Fee of the artist: </p>
+          <p className='supply-form__subtitle'>% Fee of the artist: </p>
           <input
-            className="supply-form__add"
-            type="number"
+            className='supply-form__add'
+            type='number'
             required
-            min="1"
-            step="1"
-            max="100"
+            min='1'
+            step='1'
+            max='100'
             ref={taxFee}
           />
         </span>
-        <div className="supply-form-create">
-          <button className="supply-form-create__submit">Create NFT</button>
-          <p className="supply-form-create__idCounter">
-            {" "}
+        <div className='supply-form-create'>
+          <button className='supply-form-create__submit'>Create NFT</button>
+          <p className='supply-form-create__idCounter'>
+            {' '}
             currency token ID: {tokenIdCounter}
           </p>
         </div>
       </form>
     </div>
-  );
+  )
 }
