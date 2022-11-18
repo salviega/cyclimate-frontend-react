@@ -1,8 +1,8 @@
 .home {
   text-align: center;
   &__start_page {
-    padding-bottom: 10vh;
     background: no-repeat;
+    background-image: url(../../assets/images/background-image-home2.jpeg);
     background-size: cover;
     position: relative;
   }
@@ -10,6 +10,14 @@
   &__logo {
     margin-top: 7.5vh;
     width: 25vh;
+  }
+  &__bussines {
+    height: 680px;
+    width: 1200px;
+  }
+  &__roadmap {
+    height: 680px;
+    width: 1200px;
   }
 
   &__title {

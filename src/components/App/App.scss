@@ -1,11 +1,11 @@
 main {
-  min-height: 70vh;
+  min-height: 75vh;
   background-color: var(--navy);
+  overflow-x: hidden;
+}
 
-  &__loading {
-    margin-top: 160px;
-    margin-bottom: 160px;
-    height: auto;
-    width: auto;
-  }
+.main__loading {
+  margin-top: 50vh;
+  height: auto;
+  width: auto;
 }
