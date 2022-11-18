@@ -1,9 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600&display=swap");
+@import url("https://use.typekit.net/fro1glm.css");
 
 :root {
-  --navy: #072146;
-  --blue: #91e7cd;
-  --white: #ffffff;
+  --black: #191510;
+  --yellow: #f8a31e;
+  --pink: #b73091;
+  --beige: #e3f6ff;
+  --blue: #6290ff;
+  --green: #77e0ba;
+  --lightblue: #b8e7ff;
+  --midblue: #7dd4ff;
 
   font-size: 16px;
   --title: 3.375rem;
@@ -13,7 +18,8 @@
   --h4: 1.25rem;
   --p: 1rem;
 
-  --libre: "Libre Franklin";
+  --kepler: "kepler-std";
+  --real: "ff-real-headline-pro";
 }
 
 *,
@@ -26,36 +32,42 @@
 }
 
 html {
-  font-family: var(--libre);
-  background: var(--navy);
+  background: var(--beige);
 }
 
 h1 {
-  color: var(--blue);
-  font-weight: 600;
+  color: var(--black);
+  font-weight: 300;
   font-size: var(--h1);
+  font-family: var(--real);
+  letter-spacing: 0.02em;
 }
 
 h2 {
-  color: var(--blue);
-  font-weight: 600;
+  color: var(--pink);
+  font-weight: 300;
   font-size: var(--h2);
+  font-family: var(--real);
+  letter-spacing: 0.02em;
 }
 
 h3 {
-  color: var(--white);
-  font-weight: 600;
+  color: var(--black);
+  font-weight: 300;
   font-size: var(--h3);
+  font-family: var(--real);
 }
 
 h4 {
-  color: var(--white);
+  color: var(--black);
   font-weight: 300;
   font-size: var(--h4);
+  font-family: var(--real);
 }
 
 p {
-  color: var(--white);
+  color: var(--black);
   font-weight: 300;
   font-size: var(--p);
+  font-family: var(--real);
 }

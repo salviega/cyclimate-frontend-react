@@ -1,8 +1,11 @@
 header {
-  min-height: 15vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
-  background: var(--navy);
+  background: var(--beige);
+  border-bottom: 1px solid var(--black);
+  position: fixed;
+  z-index: 9999;
 
   .menu {
     width: 98%;
@@ -55,13 +58,13 @@ header {
         &__bar {
           width: 16.8rem;
           height: 3rem;
-          background: black;
+          background: var(--black);
           font-style: normal;
           font-weight: 600;
           font-size: 2rem;
           line-height: 3rem;
-          color: var(--white);
-          border: 0 solid black;
+          color: var(--beige);
+          border-bottom: 1px solid var(--black);
           outline: none;
           &::placeholder {
             color: var(--white);
@@ -97,7 +100,7 @@ header {
         }
 
         &--active {
-          color: var(--blue);
+          color: var(--midblue);
         }
       }
     }

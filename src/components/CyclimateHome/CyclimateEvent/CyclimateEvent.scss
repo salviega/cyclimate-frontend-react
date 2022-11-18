@@ -1,12 +1,12 @@
 .event {
   margin-bottom: 5.2rem;
-  width: 28vw;
-  height: 80vh;
+  width: 20vw;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 0.75em;
-  background: var(--white);
+  border-radius: none;
+  background: var(--lightblue);
 
   figure {
     margin-top: 2rem;
@@ -14,8 +14,8 @@
     height: 28.1rem;
 
     img {
-      width: 24vw;
-      height: 24vw;
+      width: 16vw;
+      height: 16vw;
       border-radius: 0.25em;
     }
   }
@@ -28,13 +28,13 @@
     margin: 0vh 15vw 0vh 15vw;
 
     &__title {
-        margin-bottom: 3vh;
-      background-color: aliceblue;
+      margin-bottom: 3vh;
+      background-color: none;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 300;
       font-size: var(--h3);
       line-height: 1.5em;
-      color: var(--navy);
+      color: var(--blue);
       text-align: center;
     }
 
@@ -44,37 +44,42 @@
       margin-bottom: 7vh;
       background: var(--blue);
       font-style: normal;
-      font-weight: 600;
+      font-weight: 200;
       font-size: var(--h4);
       line-height: 3rem;
       text-decoration: none;
-      color: var(--white);
-      background: var(--blue);
-      border-radius: 0.25em;
-      border: none;
+      color: var(--blue);
+      background: var(--lightblue);
+      border-radius: none;
+      border: 1px solid var(--blue);
       cursor: pointer;
+    }
+
+    &__show:hover {
+      color: var(--beige);
+      background: var(--blue);
     }
   }
 }
 
-  // tablets
-  @media screen and (min-width: 40em) and (max-width: 63.9em) {
-    .nfts-container {
-      margin-bottom: 8.4rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      justify-items: center;
-    }
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
   }
+}
 
-  //web
-  @media screen and (min-width: 64em) {
-    .nfts-container {
-      margin-bottom: 8.4rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: center;
-      justify-items: center;
-    }
+//web
+@media screen and (min-width: 64em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
   }
+}

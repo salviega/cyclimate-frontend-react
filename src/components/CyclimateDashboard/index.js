@@ -44,13 +44,21 @@ export function CyclimateDashboard() {
   const onRedeemTokens = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(
-        "https://cyclimate-backend-node.herokuapp.com/redeem"
+      const response = await contracts.redeemDataContract.requestPayOut(
+        "29b34c07e3824e8f90639200b5d63781", // jobID
+        { gasLimit: 250000 }
       );
-      const data = response.data;
-      console.log("Redeen data :", data);
-      setRedeemToken(data);
-      setSincronized(false);
+      contracts.web3Provider
+        .waitForTransaction(response.hash)
+        .then(async (_response) => {
+          alert("Your data was changes for cycli");
+          setSincronized(false);
+        })
+        .catch((error) => {
+          alert("Hubo un error revisa la consola");
+          console.log(error);
+          setSincronized(false);
+        });
     } catch (error) {
       console.error(error);
       alert("hubo un error revisa la consola");

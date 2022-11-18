@@ -58,21 +58,23 @@ contract CycliContract is ERC777, Ownable {
     }
 
     function redeemTokens(
+        address _to,
         string memory _cid,
         string memory _cidURL,
         uint256 _counter
     ) external {
         require(_counter > 0, "You don't have data packages for redeem");
-        _mint(msg.sender, _counter, "", "");
+        uint256 redeemedTokens = _counter * 10**18;
+        _mint(_to, redeemedTokens, "", "");
         uint256 reedemId = reedemCounter.current();
         reedemCounter.increment();
         Data memory newData = Data(
             reedemId,
             _cid,
             _cidURL,
-            _counter,
+            redeemedTokens,
             true,
-            msg.sender
+            _to
         );
         reedemCycliBalances[reedemId] = newData;
     }

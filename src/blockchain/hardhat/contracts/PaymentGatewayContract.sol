@@ -5,6 +5,10 @@ import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 import "./VulnerableRecipientContract.sol";
 
+// ORACULO para el de pagos: 0x40193c8518BB267228Fc409a613bDbD8eC5a97b3
+// JobId: 5374949059814605a400982b797d84d5
+// email: sb-kciyw21777306@business.example.com
+
 interface ICycliContract {
     function substractCycli(address _address, uint256 _amount)
         external

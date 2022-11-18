@@ -24,7 +24,7 @@ export function CyclimateEvent({ event }) {
         <p className="event-description__title">{event.name}</p>
       </div>
       <button className="event-description__show" onClick={goDetails}>
-        Know more
+        Learn more
       </button>
     </div>
   );

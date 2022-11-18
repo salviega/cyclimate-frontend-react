@@ -53,7 +53,7 @@ async function main() {
     "PaymentGatewayContract"
   );
   const paymentgatewaycontract = await PaymentGatewayContract.deploy(
-    "0x51d956586AaCDdA6292f89eEDE0aEbB1a8bAf6e3"
+    cycliContract.address
   );
   await paymentgatewaycontract.deployed();
 
@@ -65,6 +65,23 @@ async function main() {
       (await paymentgatewaycontract.provider.getBlockNumber())
   );
   await cycliContract.authorizeOperator(paymentgatewaycontract.address);
+
+  const RedeemDataContract = await ethers.getContractFactory(
+    "RedeemDataContract"
+  );
+  const redeemDataContract = await RedeemDataContract.deploy(
+    "0xf7e113AF5C0e7D19002EEEbCdae11a2Da66Af00B", //Oracule
+    cycliContract.address
+  );
+  await redeemDataContract.deployed();
+
+  console.log(
+    "RedeemDataContract was deployed to: " + redeemDataContract.address
+  );
+  console.log(
+    "RedeemDataContract was deployed to block number: " +
+      (await redeemDataContract.provider.getBlockNumber())
+  );
 
   const addresses = [
     {
@@ -87,12 +104,16 @@ async function main() {
       paymentgatewaycontract: paymentgatewaycontract.address,
       blocknumber: await paymentgatewaycontract.provider.getBlockNumber(),
     },
+    {
+      redeemdatacontract: redeemDataContract.address,
+      blocknumber: await redeemDataContract.provider.getBlockNumber(),
+    },
   ];
-  // const addressesJSON = JSON.stringify(addresses);
-  // fs.writeFileSync(
-  //   "src/blockchain/environment/contract-address.json",
-  //   addressesJSON
-  // );
+  const addressesJSON = JSON.stringify(addresses);
+  fs.writeFileSync(
+    "src/blockchain/environment/contract-address.json",
+    addressesJSON
+  );
 }
 
 main()

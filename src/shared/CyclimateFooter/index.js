@@ -18,7 +18,7 @@ export function CyclimateFooter() {
           </div>
           <div className="footer-container-info-marketplace">
             <p className="footer-container-info-marketplace__title">
-              Social network
+              Follow us
             </p>
             <p className="footer-container-info-marketplace__subtitle">
               Instagram
@@ -35,14 +35,12 @@ export function CyclimateFooter() {
           </div>
           <div className="footer-container-info-create">
             <p className="footer-container-info-create__title">
-              Interest links
+              Links of interest
             </p>
-            <p className="footer-container-info-create__subtitle">
-              About Cyclimate
-            </p>
+            <p className="footer-container-info-create__subtitle">About us</p>
 
             <p className="footer-container-info-create__subtitle">
-              Center of attention
+              Support center
             </p>
             <p className="footer-container-info-create__subtitle">
               Privacy policy

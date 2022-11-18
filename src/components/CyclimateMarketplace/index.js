@@ -92,24 +92,22 @@ export function CyclimateMarketplace() {
     <div className="marketplace">
       <p className="marketplace__title">A life full of art</p>
       <p className="marketplace__description">
-        We curate a collection of exclusive digital art pieces for our allies.
+        We curated a collection of exclusive digital art pieces for our users.
       </p>
-      {!loading /*&& auth.user.isAdmin */ && (
-        <div className="marketplace-admin">
-          <CyclimateSupplyNFTs
-            contracts={contracts}
-            tokenIdCounter={tokenIdCounter}
-            onLoading={onLoading}
-            onSincronizedItems={onSincronizedItems}
-          />
-        </div>
-      )}
       {loading ? (
         <div className="marketplace__loading">
           <CyclimateLoading />
         </div>
       ) : (
-        <>
+        <div className="marketplace__container">
+          <div className="marketplace-admin">
+            <CyclimateSupplyNFTs
+              contracts={contracts}
+              tokenIdCounter={tokenIdCounter}
+              onLoading={onLoading}
+              onSincronizedItems={onSincronizedItems}
+            />
+          </div>
           <CyclimateNFTs
             contracts={contracts}
             onLoading={onLoading}
@@ -123,14 +121,14 @@ export function CyclimateMarketplace() {
                 ))
               : "There don't NFTs in sale"}
           </CyclimateNFTs>
-          <CyclimateNFTsResume
-            currency={currency}
-            purchasedItems={purchasedItems}
-            setItem={setItem}
-            setOpenModalSummary={setOpenModalSummary}
-          />
-        </>
+        </div>
       )}
+      <CyclimateNFTsResume
+        currency={currency}
+        purchasedItems={purchasedItems}
+        setItem={setItem}
+        setOpenModalSummary={setOpenModalSummary}
+      />
       {openModal && (
         <CyclimateModal>
           <CyclimateNFTDetails

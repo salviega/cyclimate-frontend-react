@@ -5,6 +5,10 @@ import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 import "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 import "./VulnerableRecipientContract.sol";
 
+// ORACULO para el de pagos: 0xf7e113AF5C0e7D19002EEEbCdae11a2Da66Af00B
+// JobId: 29b34c07e3824e8f90639200b5d63781
+//cycliContract: 0x99a0Dab7a0B4c548db62f1344194271a336b7244
+
 interface ICycliContract {
     function substractCycli(address _address, uint256 _amount)
         external
@@ -13,6 +17,7 @@ interface ICycliContract {
     function getSupplyBalance(address _address) external view returns (uint256);
 
     function redeemTokens(
+        address _to,
         string memory _cid,
         string memory _cidURL,
         uint256 _counter
@@ -29,6 +34,11 @@ contract RedeemDataContract is
     address cycliContract;
     uint256 private constant ORACLE_PAYMENT = 1 * LINK_DIVISIBILITY; // 1 * 10**18
     string public lastRetrievedInfo;
+    string public cid;
+    string public cidURL;
+    address public to;
+    uint256 public claim;
+    bool public boom;
 
     event RequestForInfoFulfilled(
         bytes32 indexed requestId,
@@ -56,16 +66,35 @@ contract RedeemDataContract is
             this.fulfillMultipleParameters.selector
         );
 
+        req.add("to", addressToString(msg.sender));
+
         sendChainlinkRequest(req, ORACLE_PAYMENT); // MWR API.
     }
 
     function fulfillMultipleParameters(
         bytes32 _requestId,
-        string memory cid,
-        string memory ret_url,
-        uint256 claim
+        address _to,
+        string memory _cid,
+        string memory _ret_url,
+        uint256 _claim
     ) public recordChainlinkFulfillment(_requestId) {
-        ICycliContract(cycliContract).redeemTokens(cid, ret_url, claim);
+        to = _to;
+        cid = _cid;
+        cidURL = _ret_url;
+        claim = _claim;
+
+        try
+            ICycliContract(cycliContract).redeemTokens(
+                _to,
+                _cid,
+                _ret_url,
+                _claim
+            )
+        {} catch {
+            boom = true;
+        }
+
+        boom = false;
     }
 
     /*
@@ -129,5 +158,22 @@ contract RedeemDataContract is
             // solhint-disable-line no-inline-assembly
             result := mload(add(source, 32))
         }
+    }
+
+    function addressToString(address _address)
+        internal
+        pure
+        returns (string memory)
+    {
+        bytes32 _bytes = bytes32(uint256(uint160(_address)));
+        bytes memory HEX = "0123456789abcdef";
+        bytes memory _string = new bytes(42);
+        _string[0] = "0";
+        _string[1] = "x";
+        for (uint256 i = 0; i < 20; i++) {
+            _string[2 + i * 2] = HEX[uint8(_bytes[i + 12] >> 4)];
+            _string[3 + i * 2] = HEX[uint8(_bytes[i + 12] & 0x0f)];
+        }
+        return string(_string);
     }
 }

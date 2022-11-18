@@ -20,12 +20,13 @@ export function CyclimateGateway() {
 
   const onRequestPayOut = async (event) => {
     event.preventDefault();
-    amount = ethers.utils.parseEther(amount.current.value, "ether");
 
     const info = {
       email: email.current.value,
-      amount: parseInt(amount) * 10 ** 18,
+      amount: amount.current.value,
     };
+
+    amount = ethers.utils.parseEther(amount.current.value, "ether");
 
     try {
       setLoading(true);

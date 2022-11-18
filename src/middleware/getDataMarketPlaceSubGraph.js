@@ -2,6 +2,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
 export function getDataMarketPlaceSubGraph() {
   const url = "https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v3";
+  //https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4
 
   const client = new ApolloClient({
     uri: url,
