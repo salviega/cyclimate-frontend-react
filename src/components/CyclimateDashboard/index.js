@@ -100,7 +100,6 @@ export function CyclimateDashboard() {
         }
       );
 
-      console.log(":D", response.data);
       return await response.data;
     } catch (error) {
       console.error(error);

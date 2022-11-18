@@ -49,21 +49,22 @@ async function main() {
 
   await cycliContract.authorizeOperator(benefitsContract.address);
 
-  // const PaymentGatewayContract = await ethers.getContractFactory(
-  //   "PaymentGatewayContract"
-  // );
-  // const paymentgatewaycontract = await PaymentGatewayContract.deploy(
-  //   "0x51d956586AaCDdA6292f89eEDE0aEbB1a8bAf6e3"
-  // );
-  // await paymentgatewaycontract.deployed();
+  const PaymentGatewayContract = await ethers.getContractFactory(
+    "PaymentGatewayContract"
+  );
+  const paymentgatewaycontract = await PaymentGatewayContract.deploy(
+    "0x51d956586AaCDdA6292f89eEDE0aEbB1a8bAf6e3"
+  );
+  await paymentgatewaycontract.deployed();
 
-  // console.log(
-  //   "PaymentGatewayContract was deployed to: " + paymentgatewaycontract.address
-  // );
-  // console.log(
-  //   "PaymentGatewayContract was deployed to block number: " +
-  //     (await paymentgatewaycontract.provider.getBlockNumber())
-  // );
+  console.log(
+    "PaymentGatewayContract was deployed to: " + paymentgatewaycontract.address
+  );
+  console.log(
+    "PaymentGatewayContract was deployed to block number: " +
+      (await paymentgatewaycontract.provider.getBlockNumber())
+  );
+  await cycliContract.authorizeOperator(paymentgatewaycontract.address);
 
   const addresses = [
     {
@@ -82,16 +83,16 @@ async function main() {
       benefitscontract: benefitsContract.address,
       blocknumber: await benefitsContract.provider.getBlockNumber(),
     },
-    // {
-    //   paymentgatewaycontract: paymentgatewaycontract.address,
-    //   blocknumber: await paymentgatewaycontract.provider.getBlockNumber(),
-    // },
+    {
+      paymentgatewaycontract: paymentgatewaycontract.address,
+      blocknumber: await paymentgatewaycontract.provider.getBlockNumber(),
+    },
   ];
-  const addressesJSON = JSON.stringify(addresses);
-  fs.writeFileSync(
-    "src/blockchain/environment/contract-address.json",
-    addressesJSON
-  );
+  // const addressesJSON = JSON.stringify(addresses);
+  // fs.writeFileSync(
+  //   "src/blockchain/environment/contract-address.json",
+  //   addressesJSON
+  // );
 }
 
 main()

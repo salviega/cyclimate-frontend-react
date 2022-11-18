@@ -30,15 +30,15 @@ contract PaymentGatewayContract is
     );
 
     /**
-     *  fuji
-     *@dev LINK address in fuji network: 0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846
+     *  MUMBAI
+     *@dev LINK address in Mumbai network: 0x326C977E6efc84E512bB9C30f76E30c160eD06FB
      * @dev Check https://docs.chain.link/docs/link-token-contracts/ for LINK address for the right network
      */
     constructor(address _cycliContract)
         ConfirmedOwner(msg.sender)
         VulnerableRecipientContract(_cycliContract)
     {
-        setChainlinkToken(0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846);
+        setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
         cycliContract = _cycliContract;
     }
 

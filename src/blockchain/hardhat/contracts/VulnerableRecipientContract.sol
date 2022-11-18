@@ -4,30 +4,41 @@ pragma solidity >=0.7.0 <=0.8.15;
 import "@openzeppelin/contracts/token/ERC777/ERC777.sol";
 
 contract VulnerableRecipientContract is IERC777Recipient {
-
     ERC777 public immutable erc777;
     address public immutable account;
     uint256 public amount;
 
-    constructor (address _erc777Address)
-    {
+    constructor(address _erc777Address) {
         IERC1820Registry(0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24)
             .setInterfaceImplementer(
-                address(this), 
-                keccak256("ERC777TokensRecipient"), 
+                address(this),
+                keccak256("ERC777TokensRecipient"),
                 address(this)
             );
         erc777 = ERC777(_erc777Address);
         account = msg.sender;
     }
 
-    function tokensReceived (address _operator, address _from, address _to, uint256 _amount, bytes calldata _userData, bytes calldata _operatorData) override external {
+    function tokensReceived(
+        address _operator,
+        address _from,
+        address _to,
+        uint256 _amount,
+        bytes calldata _userData,
+        bytes calldata _operatorData
+    ) external override {
         // revert();
         amount += _amount;
     }
 
-    function deposit(uint _amount) internal {
-        erc777.operatorSend(address(msg.sender), address(this), _amount, "", "");
+    function deposit(uint256 _amount) internal {
+        erc777.operatorSend(
+            address(msg.sender),
+            address(this),
+            _amount,
+            "",
+            ""
+        );
         amount += _amount;
     }
 
@@ -37,7 +48,11 @@ contract VulnerableRecipientContract is IERC777Recipient {
         amount = 0;
     }
 
-    function transferTaxFee(address _from, address _artist, uint256 _taxFee) internal {
+    function transferTaxFee(
+        address _from,
+        address _artist,
+        uint256 _taxFee
+    ) internal {
         erc777.operatorSend(_from, _artist, _taxFee, "", "");
     }
 }

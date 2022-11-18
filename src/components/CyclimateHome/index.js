@@ -11,7 +11,7 @@ export function CyclimateHome({ items: events, loading, error }) {
       <div className="home__start_page">
         <img src={logo} alt="logo" className="home__logo" />
         <h1 className="home__title">Cyclimate</h1>
-        <h2 className="home__description">Explore, connect, fun.</h2>
+        <h2 className="home__description">Explore, connect, enjoy.</h2>
       </div>
       <CyclimateEvents>
         {events?.map((event, index) => (

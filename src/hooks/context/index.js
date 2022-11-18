@@ -15,7 +15,7 @@ export function CyclimateProvider({ children }) {
     cycliContract,
     marketPlaceContract,
     benefitsContract,
-    // paymentGatewayContract,
+    paymentGatewayContract,
   } = useContractContext();
 
   const { _getChainId, _getAccounts, _getBalance } = useDashboardInfoContext();
@@ -36,7 +36,7 @@ export function CyclimateProvider({ children }) {
         cycliContract,
         marketPlaceContract,
         benefitsContract,
-        // paymentGatewayContract,
+        paymentGatewayContract,
         getChainId,
         getAccounts,
         getBalance,
@@ -71,7 +71,7 @@ export function useContracts() {
     cycliContract,
     marketPlaceContract,
     benefitsContract,
-    // paymentGatewayContract,
+    paymentGatewayContract,
   } = React.useContext(CyclimateContext);
   const contracts = {
     web3Provider,
@@ -80,7 +80,7 @@ export function useContracts() {
     cycliContract,
     marketPlaceContract,
     benefitsContract,
-    // paymentGatewayContract,
+    paymentGatewayContract,
   };
   return contracts;
 }

@@ -14,5 +14,9 @@
   {
     "benefitscontract": "0x5c9DBB23Fdf3db16Dd4E96e57E847FC91c2c61f1",
     "blocknumber": 29187951
+  },
+  {
+    "paymentgatewaycontract": "0x3e11c2bd829Ee549c0c05c0f6b257460D89b81e0",
+    "blocknumber": 29201575
   }
 ]

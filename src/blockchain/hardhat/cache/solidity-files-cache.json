@@ -1082,8 +1082,8 @@
       ]
     },
     "C:\\Users\\santiago.viana\\cyclimate-frontend-react\\src\\blockchain\\hardhat\\contracts\\PaymentGatewayContract.sol": {
-      "lastModificationDate": 1666814634169,
-      "contentHash": "fa958828a59c90632b60a7bbc4845c17",
+      "lastModificationDate": 1668708245196,
+      "contentHash": "b9b15242d971e15ee4a7589875a41b43",
       "sourceName": "src/blockchain/hardhat/contracts/PaymentGatewayContract.sol",
       "solcConfig": {
         "version": "0.8.15",
@@ -1117,7 +1117,7 @@
         ">=0.7.0 <=0.8.15"
       ],
       "artifacts": [
-        "ICosmosContract",
+        "ICycliContract",
         "PaymentGatewayContract"
       ]
     },
