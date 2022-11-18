@@ -42,7 +42,7 @@ export function CyclimateGateway() {
               "5374949059814605a400982b797d84d5", // job ID
               info.email,
               amount,
-              amount,
+              info.amount,
               { gasLimit: 200000 }
             );
           contracts.web3Provider
