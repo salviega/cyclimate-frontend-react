@@ -2,16 +2,16 @@ header {
   min-height: 10vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: var(--beige);
-  border-bottom: 1px solid var(--black);
-  position: fixed;
-  z-index: 9999;
 
   .menu {
+    min-height: 10vh;
     width: 98%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid var(--black);
 
     &-left {
       margin-left: 4rem;
