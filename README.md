@@ -2,6 +2,19 @@
 
 Cyclimate: ChainLink Hackathon Fall 2022
 
+| **Technologies**             | **Use case**                                                                                              | **Link**                                                                                     | **** | **** | **** | **** | **** | **** | **** |
+|------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|------|------|------|------|------|------|------|
+| Chainlink (Node 1)           | ANY API, An own node was deployed, for direct communication with the information from the app's dashboard | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |      |      |      |      |      |      |      |
+| Chainlink (External adapter) | External adapter, for use of the payment gateway change from native tokens to FIAT                        | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |      |      |      |      |      |      |      |
+| QuickNode                    | Chainlink node communication to polygon testnet (mumbai)                                                  | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |      |      |      |      |      |      |      |
+| Polygon                      | Application deploymentn                                                                                   | https://github.com/salviega/cyclimate-frontend-react/blob/main/hardhat.config.js             |      |      |      |      |      |      |      |
+| Filecoin (Stuary)            | IPFS storage of sensor CO2 readings, IPFS storage of native token redemption                              | https://github.com/Oriojas/skywood_urban.git                                                 |      |      |      |      |      |      |      |
+| Filecoin (Fleek)             | Deployment on IPFS of the app                                                                             | https://calm-surf-6459.on.fleek.co/                                                          |      |      |      |      |      |      |      |
+| Filecoin (web3Storage)       | SDK for storage of the image and metadata of the NFT of the benefits                                      | https://github.com/salviega/cyclimate-frontend-react/blob/main/src/middleware/web3Storage.js |      |      |      |      |      |      |      |
+| Filecoin (pinata.cloud)      | Storage of the image and metadata of the NFTs of the markertplace                                         | https://gateway.pinata.cloud/ipfs/QmQzV6R7PnfJFXtg2szTwfpT7NpSAoDH6PjUpTr75HPZNP/            |      |      |      |      |      |      |      |
+| UX/UI                        | Page display                                                                                              | https://calm-surf-6459.on.fleek.co/, https://github.com/salviega/cyclimate-frontend-react    |      |      |      |      |      |      |      |
+
+
 ### Cyclimate backend node:
 
 Repository url: https://github.com/salviega/cyclimate-backend-node
