@@ -120,13 +120,15 @@ export function CyclimateDashboard() {
         <>
           <div className="dashboard-personal-data">
             <div className="dashboard-personal-data-info">
-              <p>name: {userInformation.name}</p>
-              <p>email: {userInformation.email}</p>
-              <p>chainId: {userInformation.chainId}</p>
-              <p>wallet: {userInformation.wallet}</p>
-              <p>balance: {userInformation.balance}</p>
+              <h1>My information</h1>
+
+              <p>Name: {userInformation.name}</p>
+              <p>Email: {userInformation.email}</p>
+              <p>ChainId: {userInformation.chainId}</p>
+              <p>Wallet: {userInformation.wallet}</p>
+              <p>Balance: {userInformation.balance}</p>
               <p>Cyclimate: {userInformation.Cyclimate}</p>
-              <p>private key: {userInformation.privateKey}</p>
+              <p>Private key: {userInformation.privateKey}</p>
             </div>
           </div>
         </>
@@ -136,10 +138,11 @@ export function CyclimateDashboard() {
       <>
         <div className="dashboard-personal-data">
           <div className="dashboard-personal-data-info">
-            <p>wallet: {userInformation.wallet}</p>
-            <p>balance: {userInformation.balance}</p>
+            <h1>My information</h1>
+            <p>Wallet: {userInformation.wallet}</p>
+            <p>Balance: {userInformation.balance}</p>
             <p>Cycli: {userInformation.Cyclimate}</p>
-            <p>chainId: {userInformation.chainId}</p>
+            <p>ChainId: {userInformation.chainId}</p>
           </div>
         </div>
       </>
@@ -203,13 +206,15 @@ export function CyclimateDashboard() {
             </div>
           </div>
           <div className="dashboard-sensor">
-            <CyclimateLineGraph graphInformation={graphInformation} />
+            <h2>
+              Redeem {counter} Cyclimate for the total of your collected data
+            </h2>
             <div className="dashboard-sensor-redeem">
-              <h2>
-                Redeem {counter} Cyclimate for the total of your collected data
-              </h2>
               {counter !== 0 && (
-                <button onClick={onRedeemTokens}>Redeem</button>
+                <>
+                  <CyclimateLineGraph graphInformation={graphInformation} />
+                  <button onClick={onRedeemTokens}>Redeem</button>
+                </>
               )}
             </div>
           </div>

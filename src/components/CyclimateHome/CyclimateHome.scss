@@ -1,17 +1,14 @@
 .home {
   text-align: center;
-  padding-top: 20vh;
-  margin-bottom: 0;
   &__start_page {
     padding-bottom: 10vh;
     background: no-repeat;
     background-size: cover;
     position: relative;
-    max-height: 100vh;
   }
 
   &__logo {
-    margin-top: 10vh;
+    margin-top: 7.5vh;
     width: 25vh;
   }
 
@@ -40,40 +37,5 @@
     text-transform: capitalize;
     color: var(--white);
     text-align: center;
-  }
-}
-
-.steps {
-  display: flex;
-  flex-direction: horizontal;
-  padding: 4vh 2vw 4vh 2vw;
-  background: var(--blue);
-
-  &__container {
-    padding: 2vh 4vw 2vh 4vw;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    color: var(--beige);
-    margin-bottom: 0;
-    letter-spacing: 0.08em;
-  }
-
-  h2 {
-    font-weight: 400;
-    color: var(--lightblue);
-    margin-top: 0vh;
-    font-size: 2.5rem;
-  }
-
-  h4 {
-    margin-top: 0.5vh;
-    color: var(--midblue);
-  }
-
-  p {
-    margin-top: 2vh;
-    color: var(--beige);
   }
 }

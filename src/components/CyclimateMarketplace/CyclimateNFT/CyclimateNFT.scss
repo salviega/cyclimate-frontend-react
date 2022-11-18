@@ -52,7 +52,7 @@
     &-container {
       display: flex;
       align-items: center;
-      justify-content: right  ;
+      justify-content: right;
 
       figure {
         margin: 0;
@@ -60,8 +60,7 @@
         height: 1.9rem;
         display: flex;
         align-items: center;
-        justify-content:center;
-
+        justify-content: center;
 
         image {
           width: 100%;
@@ -80,7 +79,7 @@
         font-size: var(--h3);
         line-height: 1.5em;
         color: var(--navy);
-        text-align: center; 
+        text-align: center;
       }
     }
 
@@ -102,24 +101,24 @@
   }
 }
 
-  // tablets
-  @media screen and (min-width: 40em) and (max-width: 63.9em) {
-    .nfts-container {
-      margin-bottom: 8.4rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      justify-items: center;
-    }
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
   }
+}
 
-  //web
-  @media screen and (min-width: 64em) {
-    .nfts-container {
-      margin-bottom: 8.4rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: center;
-      justify-items: center;
-    }
+//web
+@media screen and (min-width: 64em) {
+  .nfts-container {
+    margin-bottom: 8.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
   }
+}

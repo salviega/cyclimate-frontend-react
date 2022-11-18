@@ -1,17 +1,14 @@
 header {
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--beige);
+  background: var(--navy);
 
   .menu {
-    min-height: 10vh;
     width: 98%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--black);
 
     &-left {
       margin-left: 4rem;
@@ -58,13 +55,13 @@ header {
         &__bar {
           width: 16.8rem;
           height: 3rem;
-          background: var(--black);
+          background: black;
           font-style: normal;
           font-weight: 600;
           font-size: 2rem;
           line-height: 3rem;
-          color: var(--beige);
-          border-bottom: 1px solid var(--black);
+          color: var(--white);
+          border: 0 solid black;
           outline: none;
           &::placeholder {
             color: var(--white);
@@ -100,7 +97,7 @@ header {
         }
 
         &--active {
-          color: var(--midblue);
+          color: var(--blue);
         }
       }
     }

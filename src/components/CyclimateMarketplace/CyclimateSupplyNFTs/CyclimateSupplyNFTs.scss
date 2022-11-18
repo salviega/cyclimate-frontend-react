@@ -31,7 +31,7 @@
       font-weight: 600;
       font-size: var(--h4);
       line-height: 3rem;
-      color: var(--black);
+      color: var(--white);
       justify-content: left;
     }
 
@@ -40,14 +40,14 @@
       margin-bottom: 1.2em;
       width: 40vw;
       height: 5vh;
-      background-color: var(--beige);
-      border: 0.1rem solid var(--black);
+      background-color: var(--navy);
+      border: 0.1rem solid var(--white);
 
       font-style: normal;
       font-weight: 600;
       font-size: var(--h4);
       line-height: 3rem;
-      color: var(--beige);
+      color: var(--white);
     }
 
     &-create {
@@ -68,7 +68,7 @@
         font-weight: 600;
         font-size: var(--h4);
         line-height: 3rem;
-        color: var(--beige);
+        color: var(--white);
       }
       &__idCounter {
         font-size: 10px;

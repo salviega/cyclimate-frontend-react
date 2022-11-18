@@ -5,13 +5,12 @@
   align-items: center;
 
   input {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: "Libre Franklin", sans-serif;
     font-size: var(--p);
     border: 1px solid var(--blue);
     color: var(--blue);
     border-radius: none;
     padding: 2vh 2vw;
-
   }
 
   &__title {

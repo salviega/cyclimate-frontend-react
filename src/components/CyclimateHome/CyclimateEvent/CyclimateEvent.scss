@@ -1,12 +1,12 @@
 .event {
   margin-bottom: 5.2rem;
-  width: 20vw;
-  height: 70vh;
+  width: 28vw;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: none;
-  background: var(--lightblue);
+  border-radius: 0.75em;
+  background: var(--white);
 
   figure {
     margin-top: 2rem;
@@ -14,8 +14,8 @@
     height: 28.1rem;
 
     img {
-      width: 16vw;
-      height: 16vw;
+      width: 24vw;
+      height: 24vw;
       border-radius: 0.25em;
     }
   }
@@ -29,12 +29,12 @@
 
     &__title {
       margin-bottom: 3vh;
-      background-color: none;
+      background-color: aliceblue;
       font-style: normal;
-      font-weight: 300;
+      font-weight: 600;
       font-size: var(--h3);
       line-height: 1.5em;
-      color: var(--blue);
+      color: var(--navy);
       text-align: center;
     }
 
@@ -44,20 +44,15 @@
       margin-bottom: 7vh;
       background: var(--blue);
       font-style: normal;
-      font-weight: 200;
+      font-weight: 600;
       font-size: var(--h4);
       line-height: 3rem;
       text-decoration: none;
-      color: var(--blue);
-      background: var(--lightblue);
-      border-radius: none;
-      border: 1px solid var(--blue);
-      cursor: pointer;
-    }
-
-    &__show:hover {
-      color: var(--beige);
+      color: var(--white);
       background: var(--blue);
+      border-radius: 0.25em;
+      border: none;
+      cursor: pointer;
     }
   }
 }

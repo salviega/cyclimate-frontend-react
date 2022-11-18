@@ -5,14 +5,13 @@
   width: 11.4rem;
   cursor: pointer;
   background: var(--blue);
-  border: 1px solid var(--blue);
-  border-radius: none;
+  border: none;
+  border-radius: 0.25em;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 600;
   font-size: var(--h4);
   line-height: 3rem;
-  color: var(--beige);
-  font-family: var(--real);
+  color: var(--white);
 }
 
 // Algunos estilos provocan que imagen de cerrado y de regreso dentro del
