@@ -19,11 +19,13 @@ export function CyclimateProvider ({ children }) {
     redeemDataContract
   } = useContractContext()
 
-  const { _getChainId, _getAccounts, _getBalance } = useDashboardInfoContext()
+  const { _getChainId, _getAccounts, _getBalance, _connectToSelfID } = useDashboardInfoContext()
 
   const getChainId = _getChainId(web3Provider)
   const getAccounts = _getAccounts(web3Signer)
   const getBalance = _getBalance(web3Provider)
+  const connectToSelfID = _connectToSelfID(window.ethereum, web3Signer)
+
 
   return (
     <CyclimateContext.Provider
@@ -41,7 +43,8 @@ export function CyclimateProvider ({ children }) {
         redeemDataContract,
         getChainId,
         getAccounts,
-        getBalance
+        getBalance,
+        connectToSelfID
       }}
     >
       {children}
@@ -60,8 +63,8 @@ export function AuthRoute (props) {
 }
 
 export function useAuth () {
-  const { user, login, logout } = React.useContext(CyclimateContext)
-  const auth = { user, login, logout }
+  const { user, login, logout, connectToSelfID } = React.useContext(CyclimateContext)
+  const auth = { user, login, logout, connectToSelfID }
   return auth
 }
 

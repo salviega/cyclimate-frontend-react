@@ -1,4 +1,6 @@
 import { ethers } from 'ethers'
+import { EthereumAuthProvider } from '@self.id/web'
+
 
 export function useDashboardInfoContext () {
   const _getChainId = async (web3Provider) => {
@@ -24,9 +26,16 @@ export function useDashboardInfoContext () {
     }
   }
 
+  const _connectToSelfID = async (web3Provider, web3Signer) => {
+    return new EthereumAuthProvider(web3Provider, await web3Signer.getAddress());
+  }
+
+
+
   return {
     _getChainId,
     _getAccounts,
-    _getBalance
+    _getBalance,
+    _connectToSelfID
   }
 }

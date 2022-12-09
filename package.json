@@ -13,6 +13,7 @@
     "@openzeppelin/contracts": "^4.7.3",
     "@pushprotocol/restapi": "^0.2.1",
     "@pushprotocol/uiweb": "^0.2.3",
+    "@self.id/framework": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

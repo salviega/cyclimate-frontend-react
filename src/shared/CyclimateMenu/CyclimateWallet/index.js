@@ -1,11 +1,14 @@
 import './CyclimateWallet.scss'
 import React from 'react'
 import { ethers } from 'ethers'
+import {useViewerConnection} from "@self.id/react";
+import { EthereumAuthProvider } from '@self.id/web'
 import { useAuth } from '../../../hooks/context'
 
 export function CyclimateWallet () {
-  const [loading, setLoading] = React.useState(false)
   const auth = useAuth()
+  const [loading, setLoading] = React.useState(false)
+  const [connection, connect, disconnect] = useViewerConnection();
 
   const connectWallet = async () => {
     if (!window.ethereum?.isMetaMask) {
@@ -27,7 +30,9 @@ export function CyclimateWallet () {
         setLoading(false)
         return
       }
+      connect(await auth.connectToSelfID);
       auth.login({ walletAddress: accounts[0] })
+
       setLoading(false)
     } else {
       auth.logout()

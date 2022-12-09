@@ -1,11 +1,12 @@
 import './CyclimateDashboard.scss'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { pushProtocolRestApi } from '../../middleware/pushProtocolRestApi'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
 import { useAuth, useContracts, useDashboardInfo } from '../../hooks/context'
 import { Navigate } from 'react-router-dom'
 import { ethers } from 'ethers'
+import {useViewerRecord} from "@self.id/react";
 import { CyclimateLineGraph } from './CyclimateGraph'
 import { CyclimateNotifications } from './CyclimateNotifications'
 import { CyclimateDashboardNFTs } from './CyclimateDashboardNFTs'
@@ -13,8 +14,15 @@ import { CyclimateDashboardNFT } from './CyclimateDashboardNFT'
 import { CyclimateModal } from '../../shared/CyclimateModal'
 import { CyclimateDashboardNFTDetails } from './CyclimateDashboardNFTDetails'
 import { CyclimateTransfer } from './CyclimateTransfer'
+import { VariablesInAllowedPositionRule } from 'graphql'
+import { verifyMessage } from 'ethers/lib/utils'
 
 export function CyclimateDashboard () {
+  const record = useViewerRecord("basicProfile")
+  console.log("Ceramic.network :", record.content)
+
+
+
   const auth = useAuth()
   const contracts = useContracts()
   const dashboardInfo = useDashboardInfo()
@@ -173,9 +181,9 @@ export function CyclimateDashboard () {
             delete user[attribute]
           }
         })
-        getPackagesData()
-        setNFTs(await getNFTInfo())
-        getGraphInfo()
+        //getPackagesData()
+        //setNFTs(await getNFTInfo())
+        //getGraphInfo()
         setUserInformation(user)
         setNotifications(response)
         setLoading(false)
@@ -263,3 +271,4 @@ export function CyclimateDashboard () {
     </>
   )
 }
+
