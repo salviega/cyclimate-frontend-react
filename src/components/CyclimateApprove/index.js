@@ -1,6 +1,6 @@
 import './CyclimateApprove.scss'
 import React from 'react'
-import { useAuth, useContracts } from '../../hooks/context'
+import { useContracts } from '../../hooks/context'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ethers } from 'ethers'
 import benefitContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
@@ -13,7 +13,6 @@ export function CyclimateApprove ({ getItem }) {
   const [loading, setLoading] = React.useState(true)
   const [sincronizedItems, setSincronizedItems] = React.useState(true)
 
-  const auth = useAuth()
   const contracts = useContracts()
   // const location = useLocation();
   const { slug } = useParams()
@@ -77,8 +76,8 @@ export function CyclimateApprove ({ getItem }) {
   }
 
   return (
-    <div className='approve'>
-      <button className='details-buttons__redimir' onClick={onRedeemBenefit}>
+    <div className="approve">
+      <button className="details-buttons__redimir" onClick={onRedeemBenefit}>
         Burn
       </button>
     </div>

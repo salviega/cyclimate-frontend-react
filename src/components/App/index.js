@@ -1,7 +1,7 @@
 import './App.scss'
 import React from 'react'
 import { ethers } from 'ethers'
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from '../../hooks/context'
 import { CyclimateHome } from '../CyclimateHome'
 import { CyclimateMenu } from '../../shared/CyclimateMenu'
@@ -19,7 +19,6 @@ import { CyclimateDashboard } from '../CyclimateDashboard'
 
 function App () {
   const auth = useAuth()
-  const navigate = useNavigate()
   const { getAllItems, getItem, createItem } = firebaseApi()
   const [items, setItems] = React.useState()
   const [error, setError] = React.useState(false)
