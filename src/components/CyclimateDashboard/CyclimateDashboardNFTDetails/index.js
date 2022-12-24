@@ -1,12 +1,14 @@
-import './CyclimateDashboardNFTDetails.scss'
-import logo from './../../../assets/images/logo-Cyclimate.png'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import {
-  faXmark,
-  faArrowRightArrowLeft
+  faArrowRightArrowLeft,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons'
-import { useContracts } from '../../../hooks/context'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import logo from './../../../assets/images/logo-Cyclimate.png'
+
+import './CyclimateDashboardNFTDetails.scss'
 
 export function CyclimateDashboardNFTDetails ({
   item,
@@ -15,8 +17,6 @@ export function CyclimateDashboardNFTDetails ({
   setOpenModal,
   setOpenModalTransfer
 }) {
-  const contracts = useContracts()
-
   const closeModal = () => {
     setOpenModal(false)
   }

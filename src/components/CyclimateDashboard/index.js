@@ -1,18 +1,21 @@
-import './CyclimateDashboard.scss'
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { ethers } from 'ethers'
+import { Navigate } from 'react-router-dom'
+
+import { useAuth, useContracts, useDashboardInfo } from '../../hooks/context'
 import { pushProtocolRestApi } from '../../middleware/pushProtocolRestApi'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
-import { useAuth, useContracts, useDashboardInfo } from '../../hooks/context'
-import { Navigate } from 'react-router-dom'
-import { ethers } from 'ethers'
+import { CyclimateModal } from '../../shared/CyclimateModal'
+
+import { CyclimateDashboardNFT } from './CyclimateDashboardNFT'
+import { CyclimateDashboardNFTDetails } from './CyclimateDashboardNFTDetails'
+import { CyclimateDashboardNFTs } from './CyclimateDashboardNFTs'
 import { CyclimateLineGraph } from './CyclimateGraph'
 import { CyclimateNotifications } from './CyclimateNotifications'
-import { CyclimateDashboardNFTs } from './CyclimateDashboardNFTs'
-import { CyclimateDashboardNFT } from './CyclimateDashboardNFT'
-import { CyclimateModal } from '../../shared/CyclimateModal'
-import { CyclimateDashboardNFTDetails } from './CyclimateDashboardNFTDetails'
 import { CyclimateTransfer } from './CyclimateTransfer'
+
+import './CyclimateDashboard.scss'
 
 export function CyclimateDashboard () {
   const auth = useAuth()
@@ -21,12 +24,10 @@ export function CyclimateDashboard () {
   const [loading, setLoading] = useState(true)
   const [sincronized, setSincronized] = useState(true)
   const [notifications, setNotifications] = useState([])
-  const [imageBase64, setImageBase64] = useState('')
   const [graphInformation, setGraphInformation] = useState([])
   const [NFTs, setNFTs] = useState([])
   const [item, setItem] = useState({})
   const [counter, setCounter] = useState(0)
-  const [redeemedToken, setRedeemToken] = useState({})
   const [openModal, setOpenModal] = useState(false)
   const [openModalTransfer, setOpenModalTransfer] = useState(false)
   const initialState = {
@@ -51,17 +52,17 @@ export function CyclimateDashboard () {
       contracts.web3Provider
         .waitForTransaction(response.hash)
         .then(async (_response) => {
-          alert('Your data was changes for cycli')
+          window.alert('Your data was changes for cycli')
           setSincronized(false)
         })
         .catch((error) => {
-          alert('Hubo un error revisa la consola')
+          window.alert('Hubo un error revisa la consola')
           console.log(error)
           setSincronized(false)
         })
     } catch (error) {
       console.error(error)
-      alert('hubo un error revisa la consola')
+      window.alert('hubo un error revisa la consola')
       setSincronized(false)
     }
   }
@@ -168,6 +169,7 @@ export function CyclimateDashboard () {
           Cyclimate,
           privateKey: (await dashboardInfo.getPrivateKey) || null
         }
+        // eslint-disable-next-line array-callback-return
         Object.keys(user).map((attribute) => {
           if (user[attribute] === null) {
             delete user[attribute]

@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client'
 
 export function getDataMarketPlaceSubGraph () {
   const url = 'https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4'

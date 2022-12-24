@@ -1,6 +1,7 @@
-import './CyclimateSupplyNFTs.scss'
 import React, { useRef } from 'react'
 import { ethers } from 'ethers'
+
+import './CyclimateSupplyNFTs.scss'
 
 export function CyclimateSupplyNFTs ({
   contracts,
@@ -53,30 +54,30 @@ export function CyclimateSupplyNFTs ({
                   .waitForTransaction(response3.hash)
                   .then((_response3) => {
                     setTimeout(() => {
-                      alert('It has just put the NFT up for sale')
+                      window.alert('It has just put the NFT up for sale')
                       onSincronizedItems()
                     }, 3000)
                   })
                   .catch((error) => {
-                    alert('Hubo un error, revisa la consola')
+                    window.alert('Hubo un error, revisa la consola')
                     onSincronizedItems()
                     console.error(error)
                   })
               }, 5000)
             })
             .catch((error) => {
-              alert('Hubo un error, revisa la consola')
+              window.alert('Hubo un error, revisa la consola')
               onSincronizedItems()
               console.error(error)
             })
         })
         .catch((error) => {
-          alert('Hubo un error, revisa la consola')
+          window.alert('Hubo un error, revisa la consola')
           onSincronizedItems()
           console.error(error)
         })
     } catch (error) {
-      alert('Hubo un error, revisa la consola')
+      window.alert('Hubo un error, revisa la consola')
       onSincronizedItems()
       console.error(error)
     }

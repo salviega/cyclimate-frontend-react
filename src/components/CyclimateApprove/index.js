@@ -1,17 +1,15 @@
-import './CyclimateApprove.scss'
 import React from 'react'
-import { useContracts } from '../../hooks/context'
-import { useNavigate, useParams } from 'react-router-dom'
 import { ethers } from 'ethers'
+import { useNavigate, useParams } from 'react-router-dom'
+
 import benefitContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
+import { useContracts } from '../../hooks/context'
+
+import './CyclimateApprove.scss'
 
 export function CyclimateApprove ({ getItem }) {
-  const [item, setItem] = React.useState({})
   const [contract, setContract] = React.useState({})
   const [customer, setCustomer] = React.useState({})
-  const [error, setError] = React.useState(false)
-  const [loading, setLoading] = React.useState(true)
-  const [sincronizedItems, setSincronizedItems] = React.useState(true)
 
   const contracts = useContracts()
   // const location = useLocation();
@@ -24,9 +22,7 @@ export function CyclimateApprove ({ getItem }) {
       const firebaseId = splitedParam[0]
       const tokenId = splitedParam[1]
       console.log(tokenId)
-      setItem(await getItem(firebaseId))
       const item = await getItem(firebaseId)
-      console.log(item)
       const benefitContract = new ethers.Contract(
         item.benefitContractAddress,
         benefitContractAbi.abi,
@@ -43,18 +39,13 @@ export function CyclimateApprove ({ getItem }) {
       }
       setCustomer({ address: await benefitContract.ownerOf(tokenId), tokenId })
       setContract(benefitContract)
-      setLoading(false)
     } catch (error) {
-      setLoading(false)
-      setError(error)
       console.error(error)
     }
   }
 
   React.useEffect(() => {
     data(slug)
-    setLoading(false)
-    setSincronizedItems(true)
   }, [])
 
   const onRedeemBenefit = async () => {
@@ -70,14 +61,14 @@ export function CyclimateApprove ({ getItem }) {
     contracts.web3Provider
       .waitForTransaction(response.hash)
       .then(async (_response) => {
-        alert('Was burned the benefit')
+        window.alert('Was burned the benefit')
         navigate('/')
       })
   }
 
   return (
-    <div className="approve">
-      <button className="details-buttons__redimir" onClick={onRedeemBenefit}>
+    <div className='approve'>
+      <button className='details-buttons__redimir' onClick={onRedeemBenefit}>
         Burn
       </button>
     </div>

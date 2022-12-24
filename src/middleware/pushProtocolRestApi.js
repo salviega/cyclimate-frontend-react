@@ -13,6 +13,7 @@ export function pushProtocolRestApi () {
       return null
     })
     const newRefactoredResponse = []
+    // eslint-disable-next-line array-callback-return
     Object.keys(refactoredResponse).map((attribute) => {
       if (refactoredResponse[attribute] !== null) {
         newRefactoredResponse.push(refactoredResponse[attribute])

@@ -1,11 +1,14 @@
-import './CyclimateTransfer.scss'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import {
   faArrowRightArrowLeft,
   faXmark
 } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { useAuth, useContracts } from '../../../hooks/context'
+
+import './CyclimateTransfer.scss'
 
 export function CyclimateTransfer ({
   item,
@@ -61,29 +64,29 @@ export function CyclimateTransfer ({
                 .then(async (_response2) => {
                   setTimeout(() => {
                     setLoading(false)
-                    alert(`Was transfer ${item.name} to ${info.to}`)
+                    window.alert(`Was transfer ${item.name} to ${info.to}`)
                     setSincronized(false)
                   }, 3000)
                 })
                 .catch((error) => {
-                  alert('Hubo un error, revisa la consola')
+                  window.alert('Hubo un error, revisa la consola')
                   console.log(error)
                   setLoading(false)
                 })
             })
             .catch((error) => {
-              alert('Hubo un error, revisa la consola')
+              window.alert('Hubo un error, revisa la consola')
               console.log(error)
               setLoading(false)
             })
         })
         .catch((error) => {
-          alert('Hubo un error, revisa la consola')
+          window.alert('Hubo un error, revisa la consola')
           console.log(error)
           setLoading(false)
         })
     } catch (error) {
-      alert('Hubo un error, revisa la consola')
+      window.alert('Hubo un error, revisa la consola')
       console.log(error)
       setLoading(false)
     }

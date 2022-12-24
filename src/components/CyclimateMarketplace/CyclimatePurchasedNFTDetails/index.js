@@ -1,8 +1,11 @@
-import './CyclimatePurchasedNFTDetails.scss'
-import logo from '../../../assets/images/logo-Cyclimate.png'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import logo from '../../../assets/images/logo-Cyclimate.png'
+
+import './CyclimatePurchasedNFTDetails.scss'
 
 export function CyclimatePurchasedNFTDetails ({ item, setOpenModalSummary }) {
   const closeModal = () => {

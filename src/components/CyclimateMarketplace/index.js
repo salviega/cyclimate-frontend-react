@@ -1,18 +1,21 @@
-import './CyclimateMarketplace.scss'
-import { ethers } from 'ethers'
 import React, { useReducer, useState } from 'react'
+import { ethers } from 'ethers'
 import { Navigate } from 'react-router-dom'
-import { reducerMarketplace } from '../../hooks/reducer'
+
 import { useAuth, useContracts } from '../../hooks/context'
-import { CyclimateNFTs } from './CyclimateNFTs'
-import { CyclimateNFT } from './CyclimateNFT'
-import { CyclimateNFTDetails } from './CyclimateNFTDetails'
-import { CyclimateSupplyNFTs } from './CyclimateSupplyNFTs'
-import { CyclimateNFTsResume } from './CyclimateNFTsResume'
-import { CyclimatePurchasedNFTDetails } from './CyclimatePurchasedNFTDetails'
+import { reducerMarketplace } from '../../hooks/reducer'
+import { getDataMarketPlaceSubGraph } from '../../middleware/getDataMarketPlaceSubGraph.js'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
 import { CyclimateModal } from '../../shared/CyclimateModal'
-import { getDataMarketPlaceSubGraph } from '../../middleware/getDataMarketPlaceSubGraph.js'
+
+import { CyclimateNFT } from './CyclimateNFT'
+import { CyclimateNFTDetails } from './CyclimateNFTDetails'
+import { CyclimateNFTs } from './CyclimateNFTs'
+import { CyclimateNFTsResume } from './CyclimateNFTsResume'
+import { CyclimatePurchasedNFTDetails } from './CyclimatePurchasedNFTDetails'
+import { CyclimateSupplyNFTs } from './CyclimateSupplyNFTs'
+
+import './CyclimateMarketplace.scss'
 
 export function CyclimateMarketplace () {
   const auth = useAuth()
@@ -25,7 +28,6 @@ export function CyclimateMarketplace () {
   const [openModalSummary, setOpenModalSummary] = useState(false)
   const {
     loading,
-    error,
     sincronizedItems,
     itemsSale,
     purchasedItems,
