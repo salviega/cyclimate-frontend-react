@@ -1,7 +1,10 @@
-import './CyclimateDashboardNFT.scss'
-import logo from './../../../assets/images/logo-Cyclimate.png'
 import React, { useEffect } from 'react'
+
 import { getDataMarketPlaceSubGraph } from '../../../middleware/getDataMarketPlaceSubGraph'
+
+import logo from './../../../assets/images/logo-Cyclimate.png'
+
+import './CyclimateDashboardNFT.scss'
 
 export function CyclimateDashboardNFT ({
   key,
@@ -20,12 +23,6 @@ export function CyclimateDashboardNFT ({
     setItem(item)
     setOpenModal(true)
   }
-
-  const onTransferFrom = (item) => {
-    setItem(item)
-    setOpenModalTransfer(true)
-  }
-
   const refactorItem = async () => {
     const datumSubGraphArr = await getNFTByTokenId(initialState.token_id)
     const datumSubGraph = datumSubGraphArr[0]

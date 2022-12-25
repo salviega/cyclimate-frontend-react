@@ -1,17 +1,19 @@
-import logo from '../../../assets/images/logo-Cyclimate.png'
 import React from 'react'
-import './CyclimateEventDetails.scss'
+import { ethers } from 'ethers'
+import { QRCodeSVG } from 'qrcode.react'
 import {
   Navigate,
   useLocation,
   useNavigate,
   useParams
 } from 'react-router-dom'
-import { ethers } from 'ethers'
-import { QRCodeSVG } from 'qrcode.react'
+
+import logo from '../../../assets/images/logo-Cyclimate.png'
+import benefitContractAbi from '../../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
 import { useAuth, useContracts } from '../../../hooks/context'
 import { CyclimateLoading } from '../../../shared/CyclimateLoading'
-import benefitContractAbi from '../../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
+
+import './CyclimateEventDetails.scss'
 
 export function CyclimateEventDetails ({ getItem }) {
   const [item, setItem] = React.useState({})
@@ -74,7 +76,7 @@ export function CyclimateEventDetails ({ getItem }) {
     contracts.web3Provider
       .waitForTransaction(response.hash)
       .then(async (_response) => {
-        alert(`Firmas el beneficio ${benefit.id}`)
+        window.alert(`Firmas el beneficio ${benefit.id}`)
         setSincronizedItems(false)
       })
   }
@@ -97,7 +99,7 @@ export function CyclimateEventDetails ({ getItem }) {
           contracts.web3Provider
             .waitForTransaction(response2.hash)
             .then(async (_response2) => {
-              alert('¡Got to benefit!')
+              window.alert('¡Got to benefit!')
               setSincronizedItems(false)
             })
             .catch(async (error) => {

@@ -1,6 +1,8 @@
-import './CyclimateNFT.scss'
-import logo from './../../../assets/images/logo-Cyclimate.png'
 import React from 'react'
+
+import logo from './../../../assets/images/logo-Cyclimate.png'
+
+import './CyclimateNFT.scss'
 
 export function CyclimateNFT ({
   key,
@@ -30,23 +32,23 @@ export function CyclimateNFT ({
             .then((_response2) => {
               setTimeout(() => {
                 onSincronizedItems()
-                alert('Succesful purchase')
+                window.alert('Succesful purchase')
               }, 3000)
             })
             .catch((error) => {
               onSincronizedItems()
-              alert('Hubo un error, revisa la consola')
+              window.alert('Hubo un error, revisa la consola')
               console.error(error)
             })
         })
         .catch((error) => {
           onSincronizedItems()
-          alert('Hubo un error, revisa la consola')
+          window.alert('Hubo un error, revisa la consola')
           console.error(error)
         })
     } catch (error) {
       onSincronizedItems()
-      alert('Hubo un error, revisa la consola')
+      window.alert('Hubo un error, revisa la consola')
       console.error(error)
     }
   }

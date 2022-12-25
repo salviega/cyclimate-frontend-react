@@ -1,5 +1,6 @@
-import './CyclimateNFTs.scss'
 import React from 'react'
+
+import './CyclimateNFTs.scss'
 
 export function CyclimateNFTs ({
   children,

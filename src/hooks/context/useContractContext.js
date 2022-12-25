@@ -1,11 +1,12 @@
-import feedContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json'
-import cycliContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/CycliContract.sol/CycliContract.json'
-import marketPlaceContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/MarketplaceContract.sol/MarketplaceContract.json'
+import { ethers } from 'ethers'
+
+import addresses from '../../blockchain/environment/contract-address.json'
 import benefitsContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitsContract.sol/BenefitsContract.json'
+import cycliContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/CycliContract.sol/CycliContract.json'
+import feedContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json'
+import marketPlaceContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/MarketplaceContract.sol/MarketplaceContract.json'
 import paymentgatewayContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/PaymentGatewayContract.sol/PaymentGatewayContract.json'
 import reedemDataContractAbi from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ReedemDataContract.sol/RedeemDataContract.json'
-import addresses from '../../blockchain/environment/contract-address.json'
-import { ethers } from 'ethers'
 const feedContractAddress = addresses[0].feedcontract
 const cycliContractAddress = addresses[1].cyclicontract
 const marketPlaceContractAddress = addresses[2].marketplacecontract

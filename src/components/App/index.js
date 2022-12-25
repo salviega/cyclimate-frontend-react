@@ -1,25 +1,26 @@
-import './App.scss'
 import React from 'react'
 import { ethers } from 'ethers'
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
+
 import { useAuth } from '../../hooks/context'
-import { CyclimateHome } from '../CyclimateHome'
+import { firebaseApi } from '../../middleware/firebaseApi'
+import { CyclimateFooter } from '../../shared/CyclimateFooter'
+import { CyclimateLoading } from '../../shared/CyclimateLoading'
 import { CyclimateMenu } from '../../shared/CyclimateMenu'
 import { CyclimateWallet } from '../../shared/CyclimateMenu/CyclimateWallet'
-import { CyclimateMaker } from '../CyclimateMaker'
-import { CyclimateFooter } from '../../shared/CyclimateFooter'
-import { CyclimateMarketplace } from '../CyclimateMarketplace'
-import { CyclimateEventDetails } from '../CyclimateHome/CyclimateEventDetails'
+import { CyclimateApprove } from '../CyclimateApprove'
+import { CyclimateDashboard } from '../CyclimateDashboard'
 import { CyclimateFaucet } from '../CyclimateFaucet'
 import { CyclimateGateway } from '../CyclimateGatway'
-import { CyclimateApprove } from '../CyclimateApprove'
-import { firebaseApi } from '../../middleware/firebaseApi'
-import { CyclimateLoading } from '../../shared/CyclimateLoading'
-import { CyclimateDashboard } from '../CyclimateDashboard'
+import { CyclimateHome } from '../CyclimateHome'
+import { CyclimateEventDetails } from '../CyclimateHome/CyclimateEventDetails'
+import { CyclimateMaker } from '../CyclimateMaker'
+import { CyclimateMarketplace } from '../CyclimateMarketplace'
+
+import './App.scss'
 
 function App () {
   const auth = useAuth()
-  const navigate = useNavigate()
   const { getAllItems, getItem, createItem } = firebaseApi()
   const [items, setItems] = React.useState()
   const [error, setError] = React.useState(false)

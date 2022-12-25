@@ -10,7 +10,7 @@ const adminWallets = [
 export function useAuthContext () {
   const navigate = useNavigate()
 
-  const initialState = JSON.parse(localStorage.getItem('wallet')) || {
+  const initialState = JSON.parse(window.localStorage.getItem('wallet')) || {
     walletAddress: 'Connect wallet'
   }
   const [user, setUser] = React.useState(initialState)
@@ -24,17 +24,17 @@ export function useAuthContext () {
       adminWallet = adminWallet.toLowerCase()
       if (adminWallet.toLowerCase() === walletAddress) isAdmin = true
       const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
-      localStorage.setItem('wallet', stringifiedUser)
+      window.localStorage.setItem('wallet', stringifiedUser)
       setUser({ walletAddress, isAdmin })
     } catch {
       const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
-      localStorage.setItem('wallet', stringifiedUser)
+      window.localStorage.setItem('wallet', stringifiedUser)
       setUser({ walletAddress, isAdmin })
     }
   }
 
   const logout = () => {
-    localStorage.clear()
+    window.localStorage.clear()
     setUser({ walletAddress: 'Connect wallet' })
     navigate('/')
   }

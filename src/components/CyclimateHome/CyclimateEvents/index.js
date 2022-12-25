@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './CyclimateEvents.scss'
 
 export function CyclimateEvents ({ children }) {

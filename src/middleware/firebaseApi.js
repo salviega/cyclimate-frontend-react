@@ -1,5 +1,6 @@
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
+
 import { database } from '../firebase.config'
-import { collection, getDoc, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore'
 
 export function firebaseApi () {
   const eventsCollectionRef = collection(database, 'events')

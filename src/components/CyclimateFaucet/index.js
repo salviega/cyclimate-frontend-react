@@ -1,10 +1,12 @@
-import './CyclimateFaucet.scss'
-import logo from '../../assets/images/logo-Cyclimate.png'
-import { ethers } from 'ethers'
 import React, { useRef, useState } from 'react'
+import { ethers } from 'ethers'
 import { Navigate } from 'react-router-dom'
+
+import logo from '../../assets/images/logo-Cyclimate.png'
 import { useAuth, useContracts } from '../../hooks/context'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
+
+import './CyclimateFaucet.scss'
 
 export function CyclimateFaucet () {
   const auth = useAuth()
@@ -14,7 +16,7 @@ export function CyclimateFaucet () {
   const amount = ethers.utils.parseEther('10', 'ether')
 
   const onError = (error) => {
-    alert('Hubo un error, revisa la consola')
+    window.alert('Hubo un error, revisa la consola')
     setLoading(false)
     console.error(error)
   }
@@ -46,7 +48,7 @@ export function CyclimateFaucet () {
             .then(async (_response2) => {
               setTimeout(() => {
                 setLoading(false)
-                alert('Was added 10 Cycli to your wallet')
+                window.alert('Was added 10 Cycli to your wallet')
               }, 3000)
             })
             .catch((error) => {

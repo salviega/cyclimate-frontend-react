@@ -1,7 +1,9 @@
-import './CyclimateEvent.scss'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import { useAuth } from '../../../hooks/context'
+
+import './CyclimateEvent.scss'
 
 export function CyclimateEvent ({ event }) {
   const auth = useAuth()
@@ -9,7 +11,7 @@ export function CyclimateEvent ({ event }) {
 
   const goDetails = () => {
     if (auth.user.walletAddress === 'Connect wallet') {
-      alert('Connect your wallet')
+      window.alert('Connect your wallet')
       return
     }
     return navigate(`/${event.id}`, { state: { event } })

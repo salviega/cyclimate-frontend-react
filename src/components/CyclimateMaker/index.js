@@ -1,14 +1,16 @@
-import './CyclimateMaker.scss'
-import defaultImage from '../../assets/images/default-image.jpg'
-import { ethers } from 'ethers'
 import React, { useRef, useState } from 'react'
+import { ethers } from 'ethers'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { v1 as uuid } from 'uuid'
-import { useAuth, useContracts } from '../../hooks/context'
-import jsonBenefitContract from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
+
+import defaultImage from '../../assets/images/default-image.jpg'
 import addresses from '../../blockchain/environment/contract-address.json'
-import { CyclimateLoading } from '../../shared/CyclimateLoading'
+import jsonBenefitContract from '../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/BenefitContract.sol/BenefitContract.json'
+import { useAuth, useContracts } from '../../hooks/context'
 import { web3Storage } from '../../middleware/web3Storage'
+import { CyclimateLoading } from '../../shared/CyclimateLoading'
+
+import './CyclimateMaker.scss'
 const cycliContractAddress = addresses[1].cyclicontract
 
 export function CyclimateMaker ({ createItem, setSincronizedItems }) {
@@ -29,7 +31,7 @@ export function CyclimateMaker ({ createItem, setSincronizedItems }) {
   const { putImage, putMetadata } = web3Storage()
 
   const onError = (error) => {
-    alert('Hubo un error, revisa la consola')
+    window.alert('Hubo un error, revisa la consola')
     setLoading(false)
     console.error(error)
   }
@@ -103,7 +105,7 @@ export function CyclimateMaker ({ createItem, setSincronizedItems }) {
         setTimeout(async () => {
           delete info.image
           await createItem(info)
-          alert('The benefit was created')
+          window.alert('The benefit was created')
           setLoading(false)
           setSincronizedItems(false)
           navigate('/')
@@ -152,7 +154,7 @@ export function CyclimateMaker ({ createItem, setSincronizedItems }) {
               </figure>
             </div>
             <span>
-              <p className='maker-form__subtitle'>Max NFT's mint</p>
+              <p className='maker-form__subtitle'>Max NFT&apos;s mint</p>
               <input className='maker-form__add' ref={maxNft} />
             </span>
             <span>
@@ -187,7 +189,7 @@ export function CyclimateMaker ({ createItem, setSincronizedItems }) {
 }
 
 function getBase64 (file, state) {
-  const reader = new FileReader()
+  const reader = new window.FileReader()
   reader.readAsDataURL(file)
   reader.onload = () => {
     state(reader.result)

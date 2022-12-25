@@ -1,9 +1,11 @@
-import './CyclimateGateway.scss'
-import { ethers } from 'ethers'
 import React, { useRef, useState } from 'react'
+import { ethers } from 'ethers'
 import { Navigate } from 'react-router-dom'
+
 import { useAuth, useContracts } from '../../hooks/context'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
+
+import './CyclimateGateway.scss'
 
 export function CyclimateGateway () {
   const auth = useAuth()
@@ -13,7 +15,7 @@ export function CyclimateGateway () {
   const [loading, setLoading] = useState(false)
 
   const onError = (error) => {
-    alert('Hubo un error, revisa la consola')
+    window.alert('Hubo un error, revisa la consola')
     setLoading(false)
     console.error(error)
   }
@@ -50,7 +52,7 @@ export function CyclimateGateway () {
             .waitForTransaction(response2.hash)
             .then(async (_response2) => {
               setTimeout(() => {
-                alert('Was changed your Cycli to dollars')
+                window.window.alert('Was changed your Cycli to dollars')
                 setLoading(false)
               }, 3000)
             })

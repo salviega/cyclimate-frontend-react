@@ -1,8 +1,10 @@
-import './CyclimateMenu.scss'
-import bbva from '../../assets/images/logo-bbva.png'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+
+import bbva from '../../assets/images/logo-bbva.png'
 import { useAuth } from '../../hooks/context'
+
+import './CyclimateMenu.scss'
 
 export function CyclimateMenu (props) {
   const auth = useAuth()

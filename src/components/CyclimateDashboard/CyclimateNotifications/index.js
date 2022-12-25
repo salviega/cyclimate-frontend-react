@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { NotificationItem } from '@pushprotocol/uiweb'
 
 export function CyclimateNotifications ({ notifications }) {

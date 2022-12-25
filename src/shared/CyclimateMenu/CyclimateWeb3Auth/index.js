@@ -1,8 +1,11 @@
-import './CyclimateWeb3Auth.scss'
 import React from 'react'
+
 import { CHAIN_NAMESPACES, WALLET_ADAPTERS } from '@web3auth/base'
 import { Web3Auth } from '@web3auth/modal'
+
 import { ethersRPC } from './ethersRPC'
+
+import './CyclimateWeb3Auth.scss'
 
 const clientId =
   'BIUsf57Ux9ezViHnb5VEAnK2nX6nVRv2Kw-jom21XqvBqr22cDQBi3MdsOzHnMtzRSaoybCUhhGf4YMc0llIQpk' // get from https://dashboard.web3auth.io

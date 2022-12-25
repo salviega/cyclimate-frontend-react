@@ -1,7 +1,9 @@
-import './CyclimateWallet.scss'
 import React from 'react'
 import { ethers } from 'ethers'
+
 import { useAuth } from '../../../hooks/context'
+
+import './CyclimateWallet.scss'
 
 export function CyclimateWallet () {
   const [loading, setLoading] = React.useState(false)
@@ -9,7 +11,7 @@ export function CyclimateWallet () {
 
   const connectWallet = async () => {
     if (!window.ethereum?.isMetaMask) {
-      alert("Metamask wasn't detected, please install metamask extension")
+      window.alert("Metamask wasn't detected, please install metamask extension")
       return
     }
 
@@ -23,7 +25,7 @@ export function CyclimateWallet () {
       const chainId = await web3Signer.getChainId()
       if (chainId !== 80001) {
         auth.logout()
-        alert('Change your network to Mumbai testnet!')
+        window.alert('Change your network to Mumbai testnet!')
         setLoading(false)
         return
       }

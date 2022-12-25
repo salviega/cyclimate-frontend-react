@@ -1,9 +1,13 @@
-import './CyclimateNFTDetails.scss'
-import logo from './../../../assets/images/logo-Cyclimate.png'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { faWallet, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { useContracts } from '../../../hooks/context'
+
+import logo from './../../../assets/images/logo-Cyclimate.png'
+
+import './CyclimateNFTDetails.scss'
 
 export function CyclimateNFTDetails ({
   item,
@@ -34,23 +38,23 @@ export function CyclimateNFTDetails ({
             .then((_response2) => {
               setTimeout(() => {
                 onSincronizedItems()
-                alert('Succesful purchase')
+                window.alert('Succesful purchase')
               }, 3000)
             })
             .catch((error) => {
               onSincronizedItems()
-              alert('Hubo un error, revisa la consola')
+              window.alert('Hubo un error, revisa la consola')
               console.error(error)
             })
         })
         .catch((error) => {
           onSincronizedItems()
-          alert('Hubo un error, revisa la consola')
+          window.alert('Hubo un error, revisa la consola')
           console.error(error)
         })
     } catch (error) {
       onSincronizedItems()
-      alert('Hubo un error, revisa la consola')
+      window.alert('Hubo un error, revisa la consola')
       console.error(error)
     }
   }

@@ -1,6 +1,8 @@
 import React from 'react'
-import './CyclimateFooter.scss'
+
 import bbva from '../../assets/images/logo-bbva.png'
+
+import './CyclimateFooter.scss'
 
 export function CyclimateFooter () {
   return (

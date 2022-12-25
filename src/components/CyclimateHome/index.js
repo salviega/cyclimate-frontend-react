@@ -1,9 +1,12 @@
-import './CyclimateHome.scss'
 import React from 'react'
-import logo from '../../assets/images/logo-Cyclimate.png'
+
 import bussinesModel from '../../assets/images/bussines-model.png'
+import logo from '../../assets/images/logo-Cyclimate.png'
+
 import { CyclimateEvent } from './CyclimateEvent'
 import { CyclimateEvents } from './CyclimateEvents'
+
+import './CyclimateHome.scss'
 
 export function CyclimateHome ({ items: events, loading, error }) {
   return (
