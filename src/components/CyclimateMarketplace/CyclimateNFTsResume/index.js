@@ -7,11 +7,13 @@ import logo from './../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimateNFTsResume.scss'
 
-export function CyclimateNFTsResume ({
-  purchasedItems,
-  setItem,
-  setOpenModalSummary
-}) {
+export function CyclimateNFTsResume (props) {
+  const {
+    purchasedItems,
+    setItem,
+    setOpenModalSummary
+  } = props
+
   const owner = '0x57B8a9857FE3eEd4382EC203a042af77F5aabC5F'
   const totalItems = purchasedItems.length
 

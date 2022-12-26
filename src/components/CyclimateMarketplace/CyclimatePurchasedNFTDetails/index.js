@@ -7,7 +7,9 @@ import logo from '../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimatePurchasedNFTDetails.scss'
 
-export function CyclimatePurchasedNFTDetails ({ item, setOpenModalSummary }) {
+export function CyclimatePurchasedNFTDetails (props) {
+  const { item, setOpenModalSummary } = props
+
   const closeModal = () => {
     setOpenModalSummary(false)
   }

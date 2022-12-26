@@ -10,13 +10,15 @@ import { useAuth, useContracts } from '../../../hooks/context'
 
 import './CyclimateTransfer.scss'
 
-export function CyclimateTransfer ({
-  item,
-  setLoading,
-  setSincronized,
-  setOpenModal,
-  setOpenModalTransfer
-}) {
+export function CyclimateTransfer (props) {
+  const {
+    item,
+    setLoading,
+    setSincronized,
+    setOpenModal,
+    setOpenModalTransfer
+  } = props
+
   const auth = useAuth()
   const contracts = useContracts()
   const address = React.useRef()

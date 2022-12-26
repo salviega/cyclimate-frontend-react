@@ -5,7 +5,9 @@ import { useAuth } from '../../../hooks/context'
 
 import './CyclimateEvent.scss'
 
-export function CyclimateEvent ({ event }) {
+export function CyclimateEvent (props) {
+  const { event } = props
+
   const auth = useAuth()
   const navigate = useNavigate()
 

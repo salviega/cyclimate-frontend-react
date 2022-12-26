@@ -10,13 +10,13 @@ import logo from './../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimateDashboardNFTDetails.scss'
 
-export function CyclimateDashboardNFTDetails ({
-  item,
-  setLoading,
-  setSincronized,
-  setOpenModal,
-  setOpenModalTransfer
-}) {
+export function CyclimateDashboardNFTDetails (props) {
+  const {
+    item,
+    setOpenModal,
+    setOpenModalTransfer
+  } = props
+
   const closeModal = () => {
     setOpenModal(false)
   }

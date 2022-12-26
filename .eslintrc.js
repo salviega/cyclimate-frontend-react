@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -22,7 +23,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+      files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
       rules: {
         'simple-import-sort/imports': [
           'error',

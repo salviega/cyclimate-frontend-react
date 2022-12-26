@@ -14,7 +14,7 @@ const benefitsContractAddress = addresses[3].benefitscontract
 const paymenGatewayContractAddress = addresses[4].paymentgatewaycontract
 const redeemDataContractAddress = addresses[5].redeemdatacontract
 
-export function useContractContext (signer) {
+export function useContractContext () {
   const provider = new ethers.providers.JsonRpcProvider(
     'https://rpc.ankr.com/polygon_mumbai'
   )

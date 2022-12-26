@@ -15,7 +15,9 @@ import { CyclimateLoading } from '../../../shared/CyclimateLoading'
 
 import './CyclimateEventDetails.scss'
 
-export function CyclimateEventDetails ({ getItem }) {
+export function CyclimateEventDetails (props) {
+  const { getItem } = props
+
   const [item, setItem] = React.useState({})
   const [contract, setContract] = React.useState({})
   const [buttons, setButtons] = React.useState([])

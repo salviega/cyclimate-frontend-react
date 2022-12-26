@@ -2,7 +2,9 @@ import React from 'react'
 
 import { NotificationItem } from '@pushprotocol/uiweb'
 
-export function CyclimateNotifications ({ notifications }) {
+export function CyclimateNotifications (props) {
+  const { notifications } = props
+
   return (
     <>
       {notifications?.map((oneNotification, index) => {

@@ -4,15 +4,16 @@ import logo from './../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimateNFT.scss'
 
-export function CyclimateNFT ({
-  key,
-  item,
-  contracts,
-  onLoading,
-  onSincronizedItems,
-  setItem,
-  setOpenModal
-}) {
+export function CyclimateNFT (props) {
+  const {
+    item,
+    contracts,
+    onLoading,
+    onSincronizedItems,
+    setItem,
+    setOpenModal
+  } = props
+
   const onBuy = async () => {
     try {
       onLoading()

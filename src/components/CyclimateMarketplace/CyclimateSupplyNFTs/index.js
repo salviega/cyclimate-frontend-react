@@ -3,12 +3,14 @@ import { ethers } from 'ethers'
 
 import './CyclimateSupplyNFTs.scss'
 
-export function CyclimateSupplyNFTs ({
-  contracts,
-  tokenIdCounter,
-  onLoading,
-  onSincronizedItems
-}) {
+export function CyclimateSupplyNFTs (props) {
+  const {
+    contracts,
+    tokenIdCounter,
+    onLoading,
+    onSincronizedItems
+  } = props
+
   const price = useRef()
   const tokenURI = useRef()
   const tokenId = useRef()

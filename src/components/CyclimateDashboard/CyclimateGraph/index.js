@@ -23,7 +23,9 @@ ChartJS.register(
   Legend
 )
 
-export function CyclimateLineGraph ({ graphInformation }) {
+export function CyclimateLineGraph (props) {
+  const { graphInformation } = props
+
   let xAxes = []
   const yAxes = []
   graphInformation.map((datum) => xAxes.push(datum.x))

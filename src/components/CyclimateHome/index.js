@@ -8,7 +8,9 @@ import { CyclimateEvents } from './CyclimateEvents'
 
 import './CyclimateHome.scss'
 
-export function CyclimateHome ({ items: events, loading, error }) {
+export function CyclimateHome (props) {
+  const { items: events } = props
+
   return (
     <div className='home'>
       <div className='home__start_page'>

@@ -9,12 +9,14 @@ import logo from './../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimateNFTDetails.scss'
 
-export function CyclimateNFTDetails ({
-  item,
-  onLoading,
-  onSincronizedItems,
-  setOpenModal
-}) {
+export function CyclimateNFTDetails (props) {
+  const {
+    item,
+    onLoading,
+    onSincronizedItems,
+    setOpenModal
+  } = props
+
   const contracts = useContracts()
 
   const onBuy = async () => {

@@ -2,15 +2,16 @@ import React from 'react'
 
 import './CyclimateNFTs.scss'
 
-export function CyclimateNFTs ({
-  children,
-  contracts,
-  currency,
-  onLoading,
-  onSincronizedItems,
-  setItem,
-  setOpenModal
-}) {
+export function CyclimateNFTs (props) {
+  const {
+    children,
+    contracts,
+    onLoading,
+    onSincronizedItems,
+    setItem,
+    setOpenModal
+  } = props
+
   return (
     <div className='nfts'>
       <div className='nfts-container'>

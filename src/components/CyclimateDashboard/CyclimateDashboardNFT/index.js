@@ -6,16 +6,13 @@ import logo from './../../../assets/images/logo-Cyclimate.png'
 
 import './CyclimateDashboardNFT.scss'
 
-export function CyclimateDashboardNFT ({
-  key,
-  item: initialState,
-  contracts,
-  setLoading,
-  setSincronized,
-  setItem,
-  setOpenModal,
-  setOpenModalTransfer
-}) {
+export function CyclimateDashboardNFT (props) {
+  const {
+    item: initialState,
+    setItem,
+    setOpenModal
+  } = props
+
   const [parsedItem, setParsedItem] = React.useState(initialState)
   const { getNFTByTokenId } = getDataMarketPlaceSubGraph()
 

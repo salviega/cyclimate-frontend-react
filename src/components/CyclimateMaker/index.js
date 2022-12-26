@@ -13,7 +13,9 @@ import { CyclimateLoading } from '../../shared/CyclimateLoading'
 import './CyclimateMaker.scss'
 const cycliContractAddress = addresses[1].cyclicontract
 
-export function CyclimateMaker ({ createItem, setSincronizedItems }) {
+export function CyclimateMaker (props) {
+  const { createItem, setSincronizedItems } = props
+
   const auth = useAuth()
   const contracts = useContracts()
   const navigate = useNavigate()

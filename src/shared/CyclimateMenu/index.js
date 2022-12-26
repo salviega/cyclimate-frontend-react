@@ -6,7 +6,7 @@ import { useAuth } from '../../hooks/context'
 
 import './CyclimateMenu.scss'
 
-export function CyclimateMenu (props) {
+export function CyclimateMenu ({ children }) {
   const auth = useAuth()
   const privateRoutes = true
 
@@ -82,7 +82,7 @@ export function CyclimateMenu (props) {
               </>
               )}
         </div>
-        {props.children}
+        {children}
       </nav>
     </header>
   )
