@@ -1,7 +1,8 @@
 {
-    "lint-staged": {
-      "linters": {
-        "src/        *.{js,jsx,ts,tsx}": ["eslint"]
-      },
-      "ignore": ["node_modules", "dist", "package-lock.json"]  }
+  "lint-staged": {
+    "linters": {
+      "src/*.{js,jsx,ts,tsx}": ["eslint"]
+    },
+    "ignore": ["node_modules", "dist", "package-lock.json"]
   }
+}

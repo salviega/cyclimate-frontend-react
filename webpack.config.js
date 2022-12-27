@@ -1,19 +1,22 @@
 const path = require('path')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 // const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  performance: {
-    hints: false
-  },
+  // performance: {
+  //   hints: false
+  // },
   entry: './src/index.js',
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     // TODO: Generate alias
@@ -55,23 +58,27 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|ico)$/,
-        type: 'asset/resource'
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'assets/[hash].[ext]' }
+          }
+        ]
       }
       // TODO: Update fonts
-
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      filename: './[name].html',
       template: './public/index.html',
+      filename: './index.html',
       favicon: './public/favicon.ico',
       manifest: './public/manifest.json'
     }),
     new MiniCssExtractPlugin({
       filename: './[name].css'
-    })
+    }),
     // new CopyPlugin({
     //   patterns: [
     //     {
@@ -80,9 +87,8 @@ module.exports = {
     //     }
     //   ]
     // })
-
-    // TODO: Update environment variables
-    // new Dotenv(),
+    new CleanWebpackPlugin(),
+    new Dotenv()
   ],
   optimization: {
     minimize: true,
