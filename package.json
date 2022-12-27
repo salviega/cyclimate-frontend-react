@@ -43,7 +43,8 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "lint": "standard",
-    "lint-fix": "standard --fix"
+    "lint-fix": "standard --fix",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -93,6 +94,8 @@
     "ethers": "^5.7.1",
     "hardhat": "^2.12.0",
     "https-browserify": "^1.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react-app-rewired": "^2.2.1",

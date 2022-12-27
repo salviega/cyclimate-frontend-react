@@ -7,7 +7,8 @@ import { useContracts } from '../../hooks/context'
 
 import './CyclimateApprove.scss'
 
-export function CyclimateApprove ({ getItem }) {
+export function CyclimateApprove (props) {
+  const { getItem } = props
   const [contract, setContract] = React.useState({})
   const [customer, setCustomer] = React.useState({})
 
