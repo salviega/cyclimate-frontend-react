@@ -1,3 +1,5 @@
+// TODO: npx husky add .husky/pre-push "yarn test"
+
 module.exports = {
   env: {
     browser: true,
