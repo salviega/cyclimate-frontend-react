@@ -1,49 +1,49 @@
 .home {
-  text-align: center;
-  &__start_page {
-    background: no-repeat;
-    background-image: url(../../assets/images/background-image-home2.jpeg);
-    background-size: cover;
-    position: relative;
-  }
+	text-align: center;
+	&__start_page {
+		background: no-repeat;
+		background-image: url(../../assets/images/background-image-home2.jpeg);
+		background-size: cover;
+		position: relative;
+	}
 
-  &__logo {
-    margin-top: 7.5vh;
-    width: 25vh;
-  }
-  &__bussines {
-    height: 680px;
-    width: 1200px;
-  }
-  &__roadmap {
-    height: 680px;
-    width: 1200px;
-  }
+	&__logo {
+		margin-top: 7.5vh;
+		width: 25vh;
+	}
+	&__bussines {
+		height: 680px;
+		width: 1200px;
+	}
+	&__roadmap {
+		height: 680px;
+		width: 1200px;
+	}
 
-  &__title {
-    margin-top: 5vh;
-    margin-bottom: 0.9em;
-    width: 100vw;
-    height: var(--h1);
-    font-style: normal;
-    font-weight: 600;
-    font-size: var(--h1);
-    line-height: 7.8rem;
-    letter-spacing: 0.025rem;
-    color: var(--blue);
-    text-align: center;
-  }
+	&__title {
+		margin-top: 5vh;
+		margin-bottom: 0.9em;
+		width: 100vw;
+		height: var(--h1);
+		font-style: normal;
+		font-weight: 600;
+		font-size: var(--h1);
+		line-height: 7.8rem;
+		letter-spacing: 0.025rem;
+		color: var(--blue);
+		text-align: center;
+	}
 
-  &__description {
-    margin-bottom: 20vh;
-    width: 100vw;
-    font-style: normal;
-    font-weight: 600;
-    font-size: var(--h2);
-    line-height: 3em;
-    align-items: center;
-    text-transform: capitalize;
-    color: var(--white);
-    text-align: center;
-  }
+	&__description {
+		margin-bottom: 20vh;
+		width: 100vw;
+		font-style: normal;
+		font-weight: 600;
+		font-size: var(--h2);
+		line-height: 3em;
+		align-items: center;
+		text-transform: capitalize;
+		color: var(--white);
+		text-align: center;
+	}
 }

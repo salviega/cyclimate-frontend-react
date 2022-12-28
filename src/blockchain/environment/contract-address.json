@@ -1,26 +1,26 @@
 [
-  {
-    "feedcontract": "0xD7B61d3639ac25A678b0dDeEe2902c44f5d00923",
-    "blocknumber": 29207707
-  },
-  {
-    "cyclicontract": "0x1CbD670Cd634Bc4b8b0355e3eFD797E69B3b377a",
-    "blocknumber": 29207707
-  },
-  {
-    "marketplacecontract": "0xFff0708d667Be5EFE51B301020d917688cAe4B55",
-    "blocknumber": 29207707
-  },
-  {
-    "benefitscontract": "0x0E50802D940818ea787C79189A5Ab210Eaa396f8",
-    "blocknumber": 29207707
-  },
-  {
-    "paymentgatewaycontract": "0x87DDc66c171Eb75A6a53709ECfa8746b26545843",
-    "blocknumber": 29207707
-  },
-  {
-    "redeemdatacontract": "0xEd2a83b3BB29e81902Ff694eeCBC1B5F416B1eF4",
-    "blocknumber": 29207707
-  }
+	{
+		"feedcontract": "0xD7B61d3639ac25A678b0dDeEe2902c44f5d00923",
+		"blocknumber": 29207707
+	},
+	{
+		"cyclicontract": "0x1CbD670Cd634Bc4b8b0355e3eFD797E69B3b377a",
+		"blocknumber": 29207707
+	},
+	{
+		"marketplacecontract": "0xFff0708d667Be5EFE51B301020d917688cAe4B55",
+		"blocknumber": 29207707
+	},
+	{
+		"benefitscontract": "0x0E50802D940818ea787C79189A5Ab210Eaa396f8",
+		"blocknumber": 29207707
+	},
+	{
+		"paymentgatewaycontract": "0x87DDc66c171Eb75A6a53709ECfa8746b26545843",
+		"blocknumber": 29207707
+	},
+	{
+		"redeemdatacontract": "0xEd2a83b3BB29e81902Ff694eeCBC1B5F416B1eF4",
+		"blocknumber": 29207707
+	}
 ]

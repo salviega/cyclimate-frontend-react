@@ -1,77 +1,77 @@
 .modal {
-  &-container {
-    height: 28.3rem;
-    width: 53.95rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    border-radius: 2rem;
+	&-container {
+		height: 28.3rem;
+		width: 53.95rem;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: #ffffff;
+		border-radius: 2rem;
 
-    &__cancel {
-      padding-top: 0.6rem;
-      padding-right: 1.4rem;
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: flex;
-      font-size: 28px;
-      cursor: pointer;
-    }
+		&__cancel {
+			padding-top: 0.6rem;
+			padding-right: 1.4rem;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			font-size: 28px;
+			cursor: pointer;
+		}
 
-    &-form {
-      padding: 2.4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+		&-form {
+			padding: 2.4rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-      span {
-        width: max-content;
-        display: flex;
-        flex-direction: column;
-      }
+			span {
+				width: max-content;
+				display: flex;
+				flex-direction: column;
+			}
 
-      &__subtitle {
-        max-width: max-content;
-        height: 3.2rem;
-        font-style: normal;
-        font-weight: 600;
-        font-size: var(--h4);
-        line-height: 3rem;
-        color: var(--blue);
-      }
-      &__add {
-        text-align: left;
-        margin-bottom: 1.2rem;
-        width: 40vw;
-        height: 5vh;
-        background-color: var(--navy);
-        border: 0.1rem solid var(--white);
+			&__subtitle {
+				max-width: max-content;
+				height: 3.2rem;
+				font-style: normal;
+				font-weight: 600;
+				font-size: var(--h4);
+				line-height: 3rem;
+				color: var(--blue);
+			}
+			&__add {
+				text-align: left;
+				margin-bottom: 1.2rem;
+				width: 40vw;
+				height: 5vh;
+				background-color: var(--navy);
+				border: 0.1rem solid var(--white);
 
-        font-style: normal;
-        font-weight: 600;
-        font-size: var(--h4);
-        line-height: 3rem;
-        color: var(--white);
-      }
+				font-style: normal;
+				font-weight: 600;
+				font-size: var(--h4);
+				line-height: 3rem;
+				color: var(--white);
+			}
 
-      &__submit {
-        padding: 0vh 0.3vw;
-        max-width: max-content;
-        max-height: max-content;
-        cursor: pointer;
-        background: var(--blue);
-        border-radius: 0.5em;
-        font-style: normal;
-        font-weight: 600;
-        font-size: var(--h4);
-        line-height: 3rem;
-        color: var(--white);
-      }
-    }
-  }
+			&__submit {
+				padding: 0vh 0.3vw;
+				max-width: max-content;
+				max-height: max-content;
+				cursor: pointer;
+				background: var(--blue);
+				border-radius: 0.5em;
+				font-style: normal;
+				font-weight: 600;
+				font-size: var(--h4);
+				line-height: 3rem;
+				color: var(--white);
+			}
+		}
+	}
 }

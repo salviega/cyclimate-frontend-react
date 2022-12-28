@@ -1,14 +1,14 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client'
 
-export function getDataMarketPlaceSubGraph () {
-  const url = 'https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4'
+export function getDataMarketPlaceSubGraph() {
+	const url = 'https://api.thegraph.com/subgraphs/name/salviega/cyclimate_v4'
 
-  const client = new ApolloClient({
-    uri: url,
-    cache: new InMemoryCache()
-  })
+	const client = new ApolloClient({
+		uri: url,
+		cache: new InMemoryCache()
+	})
 
-  const queryItemsForSale = `
+	const queryItemsForSale = `
     query {
       dataOfferds {
         id
@@ -24,7 +24,7 @@ export function getDataMarketPlaceSubGraph () {
       }
     }
   `
-  const queryPurchasedItems = `
+	const queryPurchasedItems = `
     query {
       dataBoughts {
         id
@@ -40,7 +40,7 @@ export function getDataMarketPlaceSubGraph () {
       }
     }
   `
-  const queryNFTByTokenId = `
+	const queryNFTByTokenId = `
   query dataBoughts($tokenId: BigInt!) {
     dataBoughts(where: {tokenId: $tokenId}) {
       id
@@ -56,27 +56,27 @@ export function getDataMarketPlaceSubGraph () {
     }
   }
 `
-  const getItemsForSale = async () => {
-    const response = await client.query({ query: gql(queryItemsForSale) })
-    return response.data.dataOfferds
-  }
+	const getItemsForSale = async () => {
+		const response = await client.query({ query: gql(queryItemsForSale) })
+		return response.data.dataOfferds
+	}
 
-  const getPurchasedItems = async () => {
-    const response = await client.query({ query: gql(queryPurchasedItems) })
-    return response.data.dataBoughts
-  }
+	const getPurchasedItems = async () => {
+		const response = await client.query({ query: gql(queryPurchasedItems) })
+		return response.data.dataBoughts
+	}
 
-  const getNFTByTokenId = async (tokenId) => {
-    const response = await client.query({
-      query: gql(queryNFTByTokenId),
-      variables: { tokenId }
-    })
-    return response.data.dataBoughts
-  }
+	const getNFTByTokenId = async tokenId => {
+		const response = await client.query({
+			query: gql(queryNFTByTokenId),
+			variables: { tokenId }
+		})
+		return response.data.dataBoughts
+	}
 
-  return {
-    getItemsForSale,
-    getPurchasedItems,
-    getNFTByTokenId
-  }
+	return {
+		getItemsForSale,
+		getPurchasedItems,
+		getNFTByTokenId
+	}
 }

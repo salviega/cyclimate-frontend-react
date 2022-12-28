@@ -1,0 +1,4 @@
+dist
+package-lock.json
+src/blockchain/hardhat/artifacts/
+src/blockchain/hardhat/cache/

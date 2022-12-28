@@ -3,7 +3,7 @@
 ## Cyclimate use:
 
 | **Technologies**             | **Use case**                                                                                              | **Link**                                                                                     |
-|------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | Chainlink (Node 1)           | ANY API, An own node was deployed, for direct communication with the information from the app's dashboard | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |
 | Chainlink (External adapter) | External adapter, for use of the payment gateway change from native tokens to FIAT                        | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |
 | QuickNode                    | Chainlink node communication to polygon testnet (mumbai)                                                  | https://github.com/LuisFelipe09/chainlink-mumbai-node                                        |
@@ -14,7 +14,6 @@
 | Filecoin (pinata.cloud)      | Storage of the image and metadata of the NFTs of the markertplace                                         | https://gateway.pinata.cloud/ipfs/QmQzV6R7PnfJFXtg2szTwfpT7NpSAoDH6PjUpTr75HPZNP/            |
 | UX/UI                        | Page display                                                                                              | https://calm-surf-6459.on.fleek.co/, https://github.com/salviega/cyclimate-frontend-react    |
 | DEFI                         | Cyclimate Uniswap pool                                                                                    | https://app.uniswap.org/#/pool/6508                                                          |
-
 
 Cyclimate: ChainLink Hackathon Fall 2022
 
