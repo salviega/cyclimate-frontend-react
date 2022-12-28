@@ -9,11 +9,11 @@ import './styles/global.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <HashRouter>
-      <CyclimateProvider>
-        <App />
-      </CyclimateProvider>
-    </HashRouter>
-  </React.StrictMode>
+	<React.StrictMode>
+		<HashRouter>
+			<CyclimateProvider>
+				<App />
+			</CyclimateProvider>
+		</HashRouter>
+	</React.StrictMode>
 )

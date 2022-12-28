@@ -2,41 +2,41 @@ import React from 'react'
 
 import { NotificationItem } from '@pushprotocol/uiweb'
 
-export function CyclimateNotifications (props) {
-  const { notifications } = props
+export function CyclimateNotifications(props) {
+	const { notifications } = props
 
-  return (
-    <>
-      {notifications?.map((oneNotification, index) => {
-        const {
-          cta,
-          title,
-          message,
-          app,
-          icon,
-          image,
-          url,
-          blockchain,
-          notification
-        } = oneNotification
+	return (
+		<>
+			{notifications?.map((oneNotification, index) => {
+				const {
+					cta,
+					title,
+					message,
+					app,
+					icon,
+					image,
+					url,
+					blockchain,
+					notification
+				} = oneNotification
 
-        return (
-          <NotificationItem
-            key={index}
-            notificationTitle={title}
-            notificationBody={message}
-            cta={cta}
-            app={app}
-            icon={icon}
-            image={image}
-            url={url}
-            theme='dark'
-            chainName={blockchain}
-            notification={notification}
-          />
-        )
-      })}
-      ;
-    </>
-  )
+				return (
+					<NotificationItem
+						key={index}
+						notificationTitle={title}
+						notificationBody={message}
+						cta={cta}
+						app={app}
+						icon={icon}
+						image={image}
+						url={url}
+						theme='dark'
+						chainName={blockchain}
+						notification={notification}
+					/>
+				)
+			})}
+			;
+		</>
+	)
 }

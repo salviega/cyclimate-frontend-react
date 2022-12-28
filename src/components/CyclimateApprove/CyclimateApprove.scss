@@ -1,22 +1,22 @@
 .approve {
-  display: grid;
-  grid-template-columns: 30vw 1fr;
-  column-gap: 5vw;
-  position: absolute;
-  top: 15vh;
-  margin-top: 10vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+	display: grid;
+	grid-template-columns: 30vw 1fr;
+	column-gap: 5vw;
+	position: absolute;
+	top: 15vh;
+	margin-top: 10vh;
+	margin-left: 10vw;
+	margin-right: 10vw;
 
-  &__quemar {
-    background: var(--blue);
-    font-family: "Libre Franklin", sans-serif;
-    font-size: var(--h4);
-    font-weight: 600;
-    color: var(--white);
-    border: 1px solid var(--blue);
-    border-radius: 0.25em;
-    margin-left: 1.5vw;
-    cursor: pointer;
-  }
+	&__quemar {
+		background: var(--blue);
+		font-family: 'Libre Franklin', sans-serif;
+		font-size: var(--h4);
+		font-weight: 600;
+		color: var(--white);
+		border: 1px solid var(--blue);
+		border-radius: 0.25em;
+		margin-left: 1.5vw;
+		cursor: pointer;
+	}
 }
