@@ -1,11 +1,44 @@
 const path = require('path')
+const AppleTouchIconsPlugin = require('apple-touch-icons-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 // const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const RobotstxtPlugin = require('robotstxt-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const options = {
+	icon: 'apple-touch-icon.png',
+	launch_screen: ['launch-screen-portrait.png', 'launch-screen-landscape.png'],
+	ipad: 'ipad.png',
+	icon_sizes: [
+		[57, 57],
+		[72, 72],
+		[76, 76],
+		[114, 114],
+		[120, 120],
+		[152, 152],
+		[167, 167],
+		[180, 180],
+		[1024, 1024]
+	],
+	launch_screen_sizes: [
+		[481, 1024],
+		[481, 1024]
+	],
+	ipad_sizes: [
+		[568, 320],
+		[667, 375],
+		[736, 414],
+		[812, 375],
+		[1024, 768],
+		[834, 834],
+		[1024, 1024]
+	],
+	resize: 'crop'
+}
 
 module.exports = {
 	mode: 'production',
@@ -15,7 +48,7 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js',
+		filename: '[name].[contenthash].js',
 		publicPath: '/'
 	},
 	resolve: {
@@ -29,6 +62,7 @@ module.exports = {
 			stream: false
 		}
 	},
+	devtool: 'source-map',
 	module: {
 		rules: [
 			{
@@ -57,11 +91,11 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpg|svg|ico)$/,
+				test: /\.(png|jpg|svg|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',
-						options: { name: 'assets/[hash].[ext]' }
+						options: { name: 'assets/images/[hash].[ext]' }
 					}
 				]
 			}
@@ -70,14 +104,16 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			inject: true,
 			template: './public/index.html',
 			filename: './index.html',
-			favicon: './public/favicon.ico',
-			manifest: './public/manifest.json'
+			inject: true
+		}),
+		new AppleTouchIconsPlugin(options),
+		new RobotstxtPlugin({
+			filePath: './robots.[hash].txt'
 		}),
 		new MiniCssExtractPlugin({
-			filename: './[name].css'
+			filename: './assets/[name].[contenthash].css'
 		}),
 		// new CopyPlugin({
 		//   patterns: [
