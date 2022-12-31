@@ -6,12 +6,14 @@ export function useDashboardInfoContext() {
 			const detailsNetwork = await web3Provider.getNetwork()
 			return detailsNetwork.chainId
 		}
+		return {}
 	}
 
 	const _getAccounts = async web3Signer => {
 		if (web3Signer) {
 			return await web3Signer.getAddress()
 		}
+		return {}
 	}
 
 	const _getBalance = async web3Provider => {
@@ -22,6 +24,7 @@ export function useDashboardInfoContext() {
 				await web3Provider.getBalance(address) // eth
 			)
 		}
+		return {}
 	}
 
 	return {
