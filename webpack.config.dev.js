@@ -1,10 +1,12 @@
 const path = require('path')
 const AppleTouchIconsPlugin = require('apple-touch-icons-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RobotstxtPlugin = require('robotstxt-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const options = {
 	icon: 'apple-touch-icon.png',
@@ -144,6 +146,13 @@ module.exports = {
 		}),
 		new Dotenv()
 	],
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		},
+		minimize: true,
+		minimizer: [new TerserPlugin(), new CssMinimizerPlugin()]
+	},
 	devServer: {
 		static: path.join(__dirname, 'dist'),
 		historyApiFallback: true,

@@ -4,7 +4,7 @@ import bbva from '../../assets/images/logo-bbva.png'
 
 import './CyclimateFooter.scss'
 
-export function CyclimateFooter() {
+function CyclimateFooter() {
 	return (
 		<footer className='footer'>
 			<div className='footer-gap' />
@@ -53,3 +53,5 @@ export function CyclimateFooter() {
 		</footer>
 	)
 }
+
+export default CyclimateFooter
