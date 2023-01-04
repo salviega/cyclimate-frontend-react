@@ -59,6 +59,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: '/node_modules/'
+			},
+			{
 				test: /\.(js|mjs|jsx|ts|tsx)$/,
 				exclude: /node_modules/,
 				use: {
@@ -84,7 +89,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpg|svg|gif)$/,
+				test: /\.(png|jp?g|svg|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -110,6 +115,11 @@ module.exports = {
 		}),
 		new Dotenv()
 	],
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		}
+	},
 	devServer: {
 		static: path.join(__dirname, 'dist'),
 		historyApiFallback: true,
