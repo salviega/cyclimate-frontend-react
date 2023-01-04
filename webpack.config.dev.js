@@ -1,12 +1,9 @@
 const path = require('path')
 const AppleTouchIconsPlugin = require('apple-touch-icons-webpack-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RobotstxtPlugin = require('robotstxt-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 
 const options = {
 	icon: 'apple-touch-icon.png',
@@ -62,6 +59,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: '/node_modules/'
+			},
+			{
 				test: /\.(js|mjs|jsx|ts|tsx)$/,
 				exclude: /node_modules/,
 				use: {
@@ -111,47 +113,12 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: './assets/[name].[contenthash].css'
 		}),
-		new ImageMinimizerPlugin({
-			minimizer: {
-				implementation: ImageMinimizerPlugin.imageminMinify,
-				options: {
-					// Lossless optimization with custom option
-					// Feel free to experiment with options for better result for you
-					plugins: [
-						['gifsicle', { interlaced: true }],
-						['jpegtran', { progressive: true }],
-						['optipng', { optimizationLevel: 5 }],
-						// Svgo configuration here https://github.com/svg/svgo#configuration
-						[
-							'svgo',
-							{
-								plugins: [
-									{
-										name: 'preset-default',
-										params: {
-											overrides: {
-												inlineStyles: {
-													onlyMatchedOnce: false
-												},
-												removeViewBox: false
-											}
-										}
-									}
-								]
-							}
-						]
-					]
-				}
-			}
-		}),
 		new Dotenv()
 	],
 	optimization: {
 		splitChunks: {
 			chunks: 'all'
-		},
-		minimize: true,
-		minimizer: [new TerserPlugin(), new CssMinimizerPlugin()]
+		}
 	},
 	devServer: {
 		static: path.join(__dirname, 'dist'),

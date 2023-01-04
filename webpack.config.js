@@ -10,6 +10,11 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+// TODO: migrate to typescript
+// TODO: lazyloading - microfrontend - alias - fonts
+// TODO: npx husky add .husky/pre-push "yarn test"
+// TODO: bug: bundle manifest apple-touch-icon
+
 const options = {
 	icon: 'apple-touch-icon.png',
 	launch_screen: ['launch-screen-portrait.png', 'launch-screen-landscape.png'],
@@ -66,6 +71,11 @@ module.exports = {
 	devtool: 'source-map',
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: '/node_modules/'
+			},
 			{
 				test: /\.(js|mjs|jsx|ts|tsx)$/,
 				exclude: /node_modules/,

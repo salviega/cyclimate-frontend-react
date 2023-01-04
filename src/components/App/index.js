@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { ethers } from 'ethers'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/context'
 import { firebaseApi } from '../../middleware/firebaseApi'
-// import { CyclimateFooter } from '../../shared/CyclimateFooter'
+import { CyclimateFooter } from '../../shared/CyclimateFooter'
 import { CyclimateLoading } from '../../shared/CyclimateLoading'
 import { CyclimateMenu } from '../../shared/CyclimateMenu'
 import { CyclimateWallet } from '../../shared/CyclimateMenu/CyclimateWallet'
@@ -18,10 +18,6 @@ import { CyclimateMaker } from '../CyclimateMaker'
 import { CyclimateMarketplace } from '../CyclimateMarketplace'
 
 import './App.scss'
-
-const AsyncCyclimateFooter = React.lazy(
-	async () => await import('../../shared/CyclimateFooter')
-)
 
 function App() {
 	const auth = useAuth()
@@ -73,54 +69,46 @@ function App() {
 				</div>
 			) : (
 				<>
-					<Suspense
-						fallback={
-							<div className='main__loading'>
-								<CyclimateLoading />
-							</div>
-						}
-					>
-						<CyclimateMenu>
-							<CyclimateWallet />
-						</CyclimateMenu>
-						<main>
-							<Routes>
-								<Route
-									path='/'
-									element={
-										<CyclimateHome
-											items={items}
-											loading={loading}
-											error={error}
-										/>
-									}
-								/>
-								<Route
-									path='/:slug'
-									element={<CyclimateEventDetails getItem={getItem} />}
-								/>
-								<Route
-									path='/maker'
-									element={
-										<CyclimateMaker
-											createItem={createItem}
-											setSincronizedItems={setSincronizedItems}
-										/>
-									}
-								/>
-								<Route path='/marketplace' element={<CyclimateMarketplace />} />
-								<Route path='/gateway' element={<CyclimateGateway />} />
-								<Route path='/faucet' element={<CyclimateFaucet />} />
-								<Route path='/dashboard' element={<CyclimateDashboard />} />
-								<Route
-									path='/approve/:slug'
-									element={<CyclimateApprove getItem={getItem} />}
-								/>
-								<Route path='*' element={<Navigate replace to='/' />} />
-							</Routes>
-						</main>
-						<AsyncCyclimateFooter />
-					</Suspense>
+					<CyclimateMenu>
+						<CyclimateWallet />
+					</CyclimateMenu>
+					<main>
+						<Routes>
+							<Route
+								path='/'
+								element={
+									<CyclimateHome
+										items={items}
+										loading={loading}
+										error={error}
+									/>
+								}
+							/>
+							<Route
+								path='/:slug'
+								element={<CyclimateEventDetails getItem={getItem} />}
+							/>
+							<Route
+								path='/maker'
+								element={
+									<CyclimateMaker
+										createItem={createItem}
+										setSincronizedItems={setSincronizedItems}
+									/>
+								}
+							/>
+							<Route path='/marketplace' element={<CyclimateMarketplace />} />
+							<Route path='/gateway' element={<CyclimateGateway />} />
+							<Route path='/faucet' element={<CyclimateFaucet />} />
+							<Route path='/dashboard' element={<CyclimateDashboard />} />
+							<Route
+								path='/approve/:slug'
+								element={<CyclimateApprove getItem={getItem} />}
+							/>
+							<Route path='*' element={<Navigate replace to='/' />} />
+						</Routes>
+					</main>
+					<CyclimateFooter />
 				</>
 			)}
 		</>
