@@ -108,7 +108,7 @@ module.exports = {
 		}),
 		new AppleTouchIconsPlugin(options),
 		new RobotstxtPlugin({
-			filePath: './robots.[hash].txt'
+			filePath: './robots.txt'
 		}),
 		new MiniCssExtractPlugin({
 			filename: './assets/[name].[contenthash].css'
